@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'BrownSugar';
+    src: url(./assets/font/Brown_Sugar.ttf);
+}
+
+@font-face {
+    font-family: 'TTRamillas';
+    src: url(./assets/font/TTRamillasTrialRegular.ttf);
+}
+
+@font-face {
+    font-family: 'TTRamillasBold';
+    src: url(./assets/font/TTRamillasTrialBold.ttf);
+}
+
+@font-face {
+    font-family: 'TTCommons';
+    src: url(./assets/font/TTCommons-Regular.ttf);
+}
