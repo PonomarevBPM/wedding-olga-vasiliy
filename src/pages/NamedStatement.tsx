@@ -9,7 +9,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     height: 450,
     marginTop: 60,
   },

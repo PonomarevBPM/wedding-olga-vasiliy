@@ -36,10 +36,12 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   terxtInput: {
     border: 'none',
+    color: 'black !important',
     backgroundColor: 'rgb(243, 243, 243)',
     borderBottom: '1px solid black',
     marginBottom: 30,
     height: 24,
+    fontSize: 16,
     width: '100%',
     '&:focus': {
       outline: 0,
@@ -123,6 +125,7 @@ export function FinalForm() {
   const {
     control,
     register,
+    setValue,
     formState: { errors },
   } = useForm({ mode: 'onSubmit', resolver: yupResolver(validationShema) });
 
@@ -154,7 +157,10 @@ export function FinalForm() {
           Подтвердите свое присутствие:
         </label>
         <div className={classes.readioOption}>
-          <div className={classes.radioInput}>
+          <div
+            className={classes.radioInput}
+            onClick={() => setValue('presence', 'я приду / мы придем')}
+          >
             <input
               {...register('presence')}
               type="radio"
@@ -166,7 +172,10 @@ export function FinalForm() {
             </label>
           </div>
 
-          <div className={classes.radioInput}>
+          <div
+            className={classes.radioInput}
+            onClick={() => setValue('presence', 'скажем / скажу позже')}
+          >
             <input
               {...register('presence')}
               type="radio"
@@ -178,7 +187,10 @@ export function FinalForm() {
             </label>
           </div>
 
-          <div className={classes.radioInput}>
+          <div
+            className={classes.radioInput}
+            onClick={() => setValue('presence', 'к сожалению, меня не будет')}
+          >
             <input
               {...register('presence')}
               type="radio"
@@ -196,7 +208,10 @@ export function FinalForm() {
           {' '}
         </label>
         <div className={classes.readioOption}>
-          <div className={classes.radioInput}>
+          <div
+            className={classes.radioInput}
+            onClick={() => setValue('registry', 'в загс и на ужине')}
+          >
             <input
               {...register('registry')}
               type="radio"
@@ -207,7 +222,10 @@ export function FinalForm() {
               в загс и на ужине
             </label>
           </div>
-          <div className={classes.radioInput}>
+          <div
+            className={classes.radioInput}
+            onClick={() => setValue('registry', 'Только на ужин')}
+          >
             <input
               {...register('registry')}
               type="radio"
