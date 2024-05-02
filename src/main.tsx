@@ -4,19 +4,16 @@ import App from './app/App.tsx';
 import './index.css';
 import { ThemeProvider } from 'react-jss';
 import { theme } from './styles/theme.ts';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
-const router = createBrowserRouter([
-  {
-    path: '/:guestsName',
-    element: <App />,
-  },
-]);
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+      <HashRouter>
+        <Routes>
+          <Route path="/:guestsName" element={<App />} />
+        </Routes>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
 );
