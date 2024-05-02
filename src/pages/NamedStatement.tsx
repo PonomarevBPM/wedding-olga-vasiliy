@@ -66,7 +66,7 @@ export function NamedStatement() {
       <span className={classes.timerHeading}>
         ДО СВАДЬБЫ ОСТАЛОСЬ
         <img
-          src="\src\assets\imgs\photo_2024-04-24_15-13-49.jpg"
+          src="\imgs\photo_2024-04-24_15-13-49.jpg"
           className={classes.pin}
         />
       </span>

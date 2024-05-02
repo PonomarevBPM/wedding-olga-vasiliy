@@ -29,7 +29,7 @@ export function Inspiration() {
     <div className={classes.inspirationContainer}>
       <span className={classes.inspirationText}>INSPIRATION</span>
       <video
-        src="\src\assets\video\IMG_2083.MOV"
+        src="\video\IMG_2083.MOV"
         id="vid"
         className={classes.inspirationVideo}
         autoPlay

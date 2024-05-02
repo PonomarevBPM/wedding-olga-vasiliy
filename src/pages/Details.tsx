@@ -35,7 +35,7 @@ export function Details() {
         <br />
         подарком будет ”подарок в конвертике”
       </span>
-      <img src="\src\assets\imgs\IMG_5431.JPG" style={{ width: 100 }} />
+      <img src="\imgs\IMG_5431.JPG" style={{ width: 100 }} />
       <span className={classes.detailsText}>
         приятным КОМПЛИМЕНТОМ для нас
         <br />
@@ -44,7 +44,7 @@ export function Details() {
         игрушка для купера
       </span>
       <img
-        src="\src\assets\imgs\IMG_5426.JPG"
+        src="\imgs\IMG_5426.JPG"
         style={{ aspectRatio: 1, width: 100, margin: 5 }}
       />
       <span className={classes.detailsText}>

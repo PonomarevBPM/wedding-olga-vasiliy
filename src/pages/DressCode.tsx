@@ -72,19 +72,19 @@ export function DressCode() {
       </span>
       <div className={classes.colorsContainer}>
         <ColorRef
-          imgSrc="\src\assets\imgs\colorRef\scale_2400.jpg"
+          imgSrc="\imgs\colorRef\scale_2400.jpg"
           className={classes.blackColor}
         >
           Черный цвет
         </ColorRef>
         <ColorRef
-          imgSrc="\src\assets\imgs\colorRef\Black and white.jpg"
+          imgSrc="\imgs\colorRef\Black and white.jpg"
           className={classes.whiteColor}
         >
           БЕЛЫЙ ЦВЕТ
         </ColorRef>
         <ColorRef
-          imgSrc="\src\assets\imgs\colorRef\16538611_silver-foil-28cm-x-45cm-scan.jpg"
+          imgSrc="\imgs\colorRef\16538611_silver-foil-28cm-x-45cm-scan.jpg"
           className={classes.blackColor}
         >
           МЕТАЛЛИЧЕСКИЕ

@@ -132,49 +132,49 @@ export function RefsForWomen() {
       <div className={classes.refsGridContainer}>
         <div className={classes.item1}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4963.JPG"
+            src="\imgs\wearRefs\IMG_4963.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item2}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4945.JPG"
+            src="\imgs\wearRefs\IMG_4945.JPG"
             className={classes.imgcover}
           />
         </div>
         <div className={classes.item3}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4971.JPG"
+            src="\imgs\wearRefs\IMG_4971.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item4}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4962.JPG"
+            src="\imgs\wearRefs\IMG_4962.JPG"
             className={classes.imgcover}
           />
         </div>
         <div className={classes.item5}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4950.JPG"
+            src="\imgs\wearRefs\IMG_4950.JPG"
             className={classes.imgcover}
           />
         </div>
         <div className={classes.item6}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4949.JPG"
+            src="\imgs\wearRefs\IMG_4949.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item7}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4948.JPG"
+            src="\imgs\wearRefs\IMG_4948.JPG"
             className={classes.imgcover}
           />
         </div>
         <div className={classes.item8}>
           <img
-            src="\src\assets\imgs\wearRefs\IMG_4967.JPG"
+            src="\imgs\wearRefs\IMG_4967.JPG"
             className={classes.imgAsIs}
           />
         </div>

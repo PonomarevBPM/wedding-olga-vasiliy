@@ -75,37 +75,37 @@ export function RefsForMen() {
       <div className={classes.refsGridForMenContainer}>
         <div className={classes.item1}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4964.JPG"
+            src="\imgs\wearRefsMen\IMG_4964.JPG"
             className={clsx(classes.imgAsIs, classes.grayscale)}
           />
         </div>
         <div className={classes.item2}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4969.JPG"
+            src="\imgs\wearRefsMen\IMG_4969.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item3}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4973.JPG"
+            src="\imgs\wearRefsMen\IMG_4973.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item4}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4972.JPG"
+            src="\imgs\wearRefsMen\IMG_4972.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item5}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4977.JPG"
+            src="\imgs\wearRefsMen\IMG_4977.JPG"
             className={classes.imgAsIs}
           />
         </div>
         <div className={classes.item6}>
           <img
-            src="\src\assets\imgs\wearRefsMen\IMG_4966.JPG"
+            src="\imgs\wearRefsMen\IMG_4966.JPG"
             className={clsx(classes.imgAsIs, classes.grayscale)}
           />
         </div>
