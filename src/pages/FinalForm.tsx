@@ -133,7 +133,7 @@ export function FinalForm() {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '-200px 0px',
+    rootMargin: '-100px 0px',
   });
 
   const {
