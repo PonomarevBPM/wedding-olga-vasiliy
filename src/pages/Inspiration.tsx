@@ -20,6 +20,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
   inspirationVideo: {
     height: 600,
   },
+  '@media not all and (min-resolution:.001dpcm)': {
+    inspirationText: {
+      fontSize: 56,
+    },
+  },
 }));
 
 export function Inspiration() {
