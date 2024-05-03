@@ -32,7 +32,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   pin: {
     aspectRatio: 1,
-    width: 120,
+    width: 110,
     position: 'absolute',
     top: '-65%',
     left: '75%',

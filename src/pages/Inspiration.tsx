@@ -10,6 +10,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     overflow: 'hidden',
     marginTop: 60,
+    marginBottom: 30,
   },
   inspirationText: {
     fontFamily: theme.font.brownSugar,
