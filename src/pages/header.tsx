@@ -12,6 +12,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
     height: '100svh',
     color: theme.color.white,
     position: 'relative',
+    paddingTop: 'env(safe-area-inset-top)',
+    paddingBottom: 'env(safe-area-inset-bottom)',
   },
   headerContent: {
     display: 'flex',
