@@ -37,6 +37,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   terxtInput: {
     border: 'none',
     color: 'black !important',
+    borderRadius: '0 !important',
     backgroundColor: 'rgb(243, 243, 243)',
     borderBottom: '1px solid black',
     marginBottom: 30,
@@ -95,6 +96,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     padding: [10, 4, 8, 4],
     verticalAlign: 'middle',
     width: 310,
+    color: 'black !important',
     '&:active': {
       backgroundColor: 'black',
       color: 'white',

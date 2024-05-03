@@ -7,6 +7,10 @@ interface Props {
     imgSrc: string;
     children: ReactNode;
     className?: string;
+    innerClasses?: {
+        imgClass?: string;
+        labelClass?: string;
+    };
 }
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -26,13 +30,20 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
 }));
 
-export function ColorRef({ imgSrc, className, children }: Props) {
+export function ColorRef({
+  imgSrc, className, children, innerClasses,
+}: Props) {
   const classes = useStyles();
 
   return (
     <div className={clsx(classes.container, className)}>
-      <img src={imgSrc} className={classes.img} />
-      <span className={classes.colorName}>{children}</span>
+      <img
+        src={imgSrc}
+        className={clsx(classes.img, innerClasses?.imgClass)}
+      />
+      <span className={clsx(classes.colorName, innerClasses?.labelClass)}>
+        {children}
+      </span>
     </div>
   );
 }
