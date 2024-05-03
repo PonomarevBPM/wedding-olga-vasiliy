@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
+import clsx from 'clsx';
 import { Theme } from '../styles/theme';
 
 const horizontal = 750;
@@ -9,6 +11,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     margin: [45, 0],
+    opacity: 0,
+    transition: 'all 1s',
+  },
+  op: {
+    opacity: 1,
   },
   dressCodeHeading: {
     fontFamily: theme.font.rammillas,
@@ -125,8 +132,16 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function RefsForWomen() {
   const classes = useStyles();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   return (
-    <div className={classes.refsContainer}>
+    <div
+      className={clsx(classes.refsContainer, inView ? classes.op : '')}
+      ref={ref}
+    >
       <span className={classes.dressCodeHeading}>References</span>
       <span className={classes.dressCodeSmallHeading}>for women</span>
       <div className={classes.refsGridContainer}>

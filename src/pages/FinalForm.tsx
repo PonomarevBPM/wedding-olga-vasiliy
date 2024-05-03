@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
+import clsx from 'clsx';
 import { useForm, Form } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,6 +13,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     textTransform: 'uppercase',
     marginTop: 45,
+    opacity: 0,
+    transition: 'all 1s',
+  },
+  op: {
+    opacity: 1,
   },
   formHeading: {
     fontFamily: theme.font.rammillas,
@@ -124,6 +131,11 @@ const validationShema = yup.object({
 export function FinalForm() {
   const classes = useStyles();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   const {
     control,
     register,
@@ -132,7 +144,10 @@ export function FinalForm() {
   } = useForm({ mode: 'onSubmit', resolver: yupResolver(validationShema) });
 
   return (
-    <div className={classes.formWrapper}>
+    <div
+      className={clsx(classes.formWrapper, inView ? classes.op : '')}
+      ref={ref}
+    >
       <span className={classes.formHeading}>анкета гостя</span>
       <span className={classes.formSmallHeading}>
         пожалуйста, заполните данную

@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
+import clsx from 'clsx';
 import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -8,6 +10,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     marginTop: 30,
+    opacity: 0,
+    transition: 'all 1s',
+  },
+  op: {
+    opacity: 1,
   },
   detailsHeading: {
     fontFamily: theme.font.rammillas,
@@ -25,8 +32,16 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function Details() {
   const classes = useStyles();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   return (
-    <div className={classes.detailsContainer}>
+    <div
+      className={clsx(classes.detailsContainer, inView ? classes.op : '')}
+      ref={ref}
+    >
       <span className={classes.detailsHeading}>детали</span>
       <span className={classes.detailsText}>
         сразу после ужина мы улетаем в
