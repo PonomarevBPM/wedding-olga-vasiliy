@@ -18,6 +18,16 @@ const useStyles = createUseStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     gap: 15,
+    '&::after': {
+      content: '""',
+      borderLeft: '1px solid white',
+      height: '10svh',
+    },
+    '&::before': {
+      content: '""',
+      borderLeft: '1px solid white',
+      height: '10svh',
+    },
   },
   letterA: {
     // marginTop: '-8svh',
@@ -29,12 +39,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     flexDirection: 'column',
     position: 'absolute',
     top: 0,
-
-    '&::after': {
-      content: '""',
-      borderLeft: '1px solid white',
-      height: '10svh',
-    },
   },
   letterV: {
     fontFamily: theme.font.brownSugar,
@@ -45,13 +49,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     position: 'absolute',
-    bottom: 0,
-
-    '&::before': {
-      content: '""',
-      borderLeft: '1px solid white',
-      height: '10svh',
-    },
+    bottom: '-5%',
   },
   invite: {
     fontFamily: theme.font.rammillas,
