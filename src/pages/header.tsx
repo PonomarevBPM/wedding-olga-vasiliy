@@ -9,7 +9,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: theme.color.black,
-    height: '100lvh',
+    height: '100svh',
     color: theme.color.white,
     position: 'relative',
   },
@@ -22,8 +22,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
   letterA: {
     // marginTop: '-8svh',
     fontFamily: theme.font.brownSugar,
-    lineHeight: '35lvh',
-    fontSize: '35lvh',
+    lineHeight: '35svh',
+    fontSize: '35svh',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -33,14 +33,14 @@ const useStyles = createUseStyles((theme: Theme) => ({
     '&::after': {
       content: '""',
       borderLeft: '1px solid white',
-      height: '10lvh',
+      height: '10svh',
     },
   },
   letterV: {
     fontFamily: theme.font.brownSugar,
     // marginBottom: '-9svh',
-    lineHeight: '35lvh',
-    fontSize: '35lvh',
+    lineHeight: '35svh',
+    fontSize: '35svh',
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -50,7 +50,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     '&::before': {
       content: '""',
       borderLeft: '1px solid white',
-      height: '10lvh',
+      height: '10svh',
     },
   },
   invite: {
