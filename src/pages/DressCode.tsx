@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
+import clsx from 'clsx';
 import { Theme } from '../styles/theme';
 import { ColorRef } from '../components/ColodrRef';
 
@@ -11,6 +13,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     marginTop: 30,
+    opacity: 0,
+    transition: 'all 1s',
+  },
+  op: {
+    opacity: 1,
   },
   dressCodeHeading: {
     fontFamily: theme.font.rammillas,
@@ -58,8 +65,19 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function DressCode() {
   const classes = useStyles();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   return (
-    <div className={classes.dressCodeContainer}>
+    <div
+      className={clsx(
+        classes.dressCodeContainer,
+        inView ? classes.op : '',
+      )}
+      ref={ref}
+    >
       <span className={classes.dressCodeHeading}>Dress code</span>
       <span className={classes.dressCodeText}>
         мы очень старались сделать наш праздник

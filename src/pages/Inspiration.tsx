@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
+import clsx from 'clsx';
 import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -11,6 +13,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
     overflow: 'hidden',
     marginTop: 60,
     marginBottom: 30,
+    opacity: 0,
+    transition: 'all 1s',
   },
   inspirationText: {
     fontFamily: theme.font.brownSugar,
@@ -31,13 +35,27 @@ const useStyles = createUseStyles((theme: Theme) => ({
       fontSize: 56,
     },
   },
+  op: {
+    opacity: 1,
+  },
 }));
 
 export function Inspiration() {
   const classes = useStyles();
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   return (
-    <div className={classes.inspirationContainer}>
+    <div
+      className={clsx(
+        classes.inspirationContainer,
+        inView ? classes.op : '',
+      )}
+      ref={ref}
+    >
       <span className={classes.inspirationText}>INSPIRATION</span>
       <video
         src="\video\IMG_2083.MOV"

@@ -1,5 +1,7 @@
 import { createUseStyles } from 'react-jss';
+import { useInView } from 'react-intersection-observer';
 import { useParams } from 'react-router-dom';
+import clsx from 'clsx';
 import { Timer } from '../components/Timer';
 import { Theme } from '../styles/theme';
 import { getGuestName } from '../utils/getGuestName';
@@ -9,26 +11,32 @@ const useStyles = createUseStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 450,
     marginTop: 60,
+    opacity: 0,
+    transition: 'all 1s',
+  },
+  op: {
+    opacity: 1,
   },
   statementNames: {
     fontFamily: theme.font.rammillas,
     fontSize: 36,
     textTransform: 'uppercase',
     textAlign: 'center',
+    marginBottom: 30,
   },
   statementText: {
     fontFamily: theme.font.commons,
     fontSize: 16,
     textAlign: 'center',
     textTransform: 'uppercase',
+    marginBottom: 30,
   },
   timerHeading: {
     fontFamily: theme.font.rammillasBold,
     fontSize: 20,
     position: 'relative',
+    marginBottom: 60,
   },
   pin: {
     aspectRatio: 1,
@@ -47,8 +55,19 @@ export function NamedStatement() {
   const { guestsName } = useParams();
   const localizedGuestNames = getGuestName(guestsName);
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
+
   return (
-    <div className={classes.statementContainer}>
+    <div
+      className={clsx(
+        classes.statementContainer,
+        inView ? classes.op : '',
+      )}
+      ref={ref}
+    >
       <span className={classes.statementNames}>
         {localizedGuestNames}
       </span>
