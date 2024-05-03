@@ -25,6 +25,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
       fontSize: 56,
     },
   },
+  '@supports (-webkit-touch-callout: none)': {
+    inspirationText: {
+      fontSize: 56,
+    },
+  },
 }));
 
 export function Inspiration() {
