@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 import { useParams } from 'react-router-dom';
 import { Timer } from '../components/Timer';
 import { Theme } from '../styles/theme';
-import { getGuestName } from '../utils/getGuestName';
+import { GuestName } from '../utils/GuestName';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -47,14 +47,11 @@ export function NamedStatement() {
   const classes = useStyles();
 
   const { guestsName } = useParams();
-  const localizedGuestNames = getGuestName(guestsName);
 
   return (
     <AnimatedBaseLayout>
       <div className={classes.statementContainer}>
-        <span className={classes.statementNames}>
-          {localizedGuestNames}
-        </span>
+        <GuestName guest={guestsName} />
         <span className={classes.statementText}>
           В нашей жизни предстоит важный для нас
           <br />
