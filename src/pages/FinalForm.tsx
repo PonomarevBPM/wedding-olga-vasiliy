@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
 import { useForm, Form } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
