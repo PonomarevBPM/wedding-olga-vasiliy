@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
-import { useInView } from 'react-intersection-observer';
-import clsx from 'clsx';
 import { Theme } from '../styles/theme';
+import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   programmContainer: {
@@ -11,11 +10,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     height: 450,
     justifyContent: 'space-around',
     marginTop: 30,
-    opacity: 0,
-    transition: 'all 1s',
-  },
-  op: {
-    opacity: 1,
   },
   programmHeading: {
     fontFamily: theme.font.rammillas,
@@ -62,40 +56,31 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function Programm() {
   const classes = useStyles();
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
-
   return (
-    <div
-      className={clsx(
-        classes.programmContainer,
-        inView ? classes.op : '',
-      )}
-      ref={ref}
-    >
-      <span className={classes.programmHeading}>Программа Дня</span>
-      <div className={classes.programmBlock}>
-        <span className={classes.programmTime}>16:40</span>
-        <span className={classes.programmText}>
-          РОСПИСЬ В ОСОБНЯКЕ “РОЯЛ”
-          <br />
-          {' '}
-          Малая Ордынка ул., 14
-        </span>
-      </div>
-      <div className={classes.programmBlock}>
-        <span className={classes.programmTime}>17:40</span>
-        <span className={classes.programmText}>
-          УЖИН В РЕСТОРАНЕ “КАРЛСОН”
-          <br />
-          {' '}
-          Овчинниковская наб., 20/1
-        </span>
-      </div>
+    <AnimatedBaseLayout>
+      <div className={classes.programmContainer}>
+        <span className={classes.programmHeading}>Программа Дня</span>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>16:40</span>
+          <span className={classes.programmText}>
+            РОСПИСЬ В ОСОБНЯКЕ “РОЯЛ”
+            <br />
+            {' '}
+            Малая Ордынка ул., 14
+          </span>
+        </div>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>17:40</span>
+          <span className={classes.programmText}>
+            УЖИН В РЕСТОРАНЕ “КАРЛСОН”
+            <br />
+            {' '}
+            Овчинниковская наб., 20/1
+          </span>
+        </div>
 
-      <span className={classes.programmDate}>04.08.24</span>
-    </div>
+        <span className={classes.programmDate}>04.08.24</span>
+      </div>
+    </AnimatedBaseLayout>
   );
 }

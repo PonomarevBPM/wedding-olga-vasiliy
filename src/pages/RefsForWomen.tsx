@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
-import { useInView } from 'react-intersection-observer';
-import clsx from 'clsx';
 import { Theme } from '../styles/theme';
+import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const horizontal = 750;
 
@@ -11,11 +10,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     margin: [45, 0],
-    opacity: 0,
-    transition: 'all 1s',
-  },
-  op: {
-    opacity: 1,
   },
   dressCodeHeading: {
     fontFamily: theme.font.rammillas,
@@ -132,68 +126,62 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function RefsForWomen() {
   const classes = useStyles();
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
-
   return (
-    <div
-      className={clsx(classes.refsContainer, inView ? classes.op : '')}
-      ref={ref}
-    >
-      <span className={classes.dressCodeHeading}>References</span>
-      <span className={classes.dressCodeSmallHeading}>for women</span>
-      <div className={classes.refsGridContainer}>
-        <div className={classes.item1}>
-          <img
-            src="\imgs\wearRefs\IMG_4963.JPG"
-            className={classes.imgAsIs}
-          />
-        </div>
-        <div className={classes.item2}>
-          <img
-            src="\imgs\wearRefs\IMG_4945.JPG"
-            className={classes.imgcover}
-          />
-        </div>
-        <div className={classes.item3}>
-          <img
-            src="\imgs\wearRefs\IMG_4971.JPG"
-            className={classes.imgAsIs}
-          />
-        </div>
-        <div className={classes.item4}>
-          <img
-            src="\imgs\wearRefs\IMG_4962.JPG"
-            className={classes.imgcover}
-          />
-        </div>
-        <div className={classes.item5}>
-          <img
-            src="\imgs\wearRefs\IMG_4950.JPG"
-            className={classes.imgcover}
-          />
-        </div>
-        <div className={classes.item6}>
-          <img
-            src="\imgs\wearRefs\IMG_4949.JPG"
-            className={classes.imgAsIs}
-          />
-        </div>
-        <div className={classes.item7}>
-          <img
-            src="\imgs\wearRefs\IMG_4948.JPG"
-            className={classes.imgcover}
-          />
-        </div>
-        <div className={classes.item8}>
-          <img
-            src="\imgs\wearRefs\IMG_4967.JPG"
-            className={classes.imgAsIs}
-          />
+    <AnimatedBaseLayout>
+      <div className={classes.refsContainer}>
+        <span className={classes.dressCodeHeading}>References</span>
+        <span className={classes.dressCodeSmallHeading}>for women</span>
+        <div className={classes.refsGridContainer}>
+          <div className={classes.item1}>
+            <img
+              src="\imgs\wearRefs\IMG_4963.JPG"
+              className={classes.imgAsIs}
+            />
+          </div>
+          <div className={classes.item2}>
+            <img
+              src="\imgs\wearRefs\IMG_4945.JPG"
+              className={classes.imgcover}
+            />
+          </div>
+          <div className={classes.item3}>
+            <img
+              src="\imgs\wearRefs\IMG_4971.JPG"
+              className={classes.imgAsIs}
+            />
+          </div>
+          <div className={classes.item4}>
+            <img
+              src="\imgs\wearRefs\IMG_4962.JPG"
+              className={classes.imgcover}
+            />
+          </div>
+          <div className={classes.item5}>
+            <img
+              src="\imgs\wearRefs\IMG_4950.JPG"
+              className={classes.imgcover}
+            />
+          </div>
+          <div className={classes.item6}>
+            <img
+              src="\imgs\wearRefs\IMG_4949.JPG"
+              className={classes.imgAsIs}
+            />
+          </div>
+          <div className={classes.item7}>
+            <img
+              src="\imgs\wearRefs\IMG_4948.JPG"
+              className={classes.imgcover}
+            />
+          </div>
+          <div className={classes.item8}>
+            <img
+              src="\imgs\wearRefs\IMG_4967.JPG"
+              className={classes.imgAsIs}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </AnimatedBaseLayout>
   );
 }

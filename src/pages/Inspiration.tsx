@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
-import { useInView } from 'react-intersection-observer';
-import clsx from 'clsx';
 import { Theme } from '../styles/theme';
+import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   inspirationContainer: {
@@ -13,8 +12,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     overflow: 'hidden',
     marginTop: 60,
     marginBottom: 30,
-    opacity: 0,
-    transition: 'all 1s',
   },
   inspirationText: {
     fontFamily: theme.font.brownSugar,
@@ -35,36 +32,24 @@ const useStyles = createUseStyles((theme: Theme) => ({
       fontSize: 56,
     },
   },
-  op: {
-    opacity: 1,
-  },
 }));
 
 export function Inspiration() {
   const classes = useStyles();
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
-
   return (
-    <div
-      className={clsx(
-        classes.inspirationContainer,
-        inView ? classes.op : '',
-      )}
-      ref={ref}
-    >
-      <span className={classes.inspirationText}>INSPIRATION</span>
-      <video
-        src="\video\IMG_2083.MOV"
-        id="vid"
-        className={classes.inspirationVideo}
-        autoPlay
-        controls
-        preload="auto"
-      />
-    </div>
+    <AnimatedBaseLayout>
+      <div className={classes.inspirationContainer}>
+        <span className={classes.inspirationText}>INSPIRATION</span>
+        <video
+          src="\video\IMG_2083.MOV"
+          id="vid"
+          className={classes.inspirationVideo}
+          autoPlay
+          controls
+          preload="auto"
+        />
+      </div>
+    </AnimatedBaseLayout>
   );
 }

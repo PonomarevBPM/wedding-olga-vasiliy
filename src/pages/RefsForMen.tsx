@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
-import { useInView } from 'react-intersection-observer';
 import clsx from 'clsx';
 import { Theme } from '../styles/theme';
+import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   dressCodeSmallHeading: {
@@ -11,13 +11,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     textAlign: 'center',
     textTransform: 'uppercase',
     width: '100%',
-  },
-  refsContainerMen: {
-    opacity: 0,
-    transition: 'all 1s',
-  },
-  op: {
-    opacity: 1,
   },
   refsGridForMenContainer: {
     display: 'grid',
@@ -77,16 +70,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function RefsForMen() {
   const classes = useStyles();
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
-
   return (
-    <div
-      className={clsx(classes.refsContainerMen, inView ? classes.op : '')}
-      ref={ref}
-    >
+    <AnimatedBaseLayout>
       <span className={classes.dressCodeSmallHeading}>for men</span>
       <div className={classes.refsGridForMenContainer}>
         <div className={classes.item1}>
@@ -126,6 +111,6 @@ export function RefsForMen() {
           />
         </div>
       </div>
-    </div>
+    </AnimatedBaseLayout>
   );
 }

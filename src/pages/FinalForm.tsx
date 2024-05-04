@@ -1,10 +1,11 @@
 import { createUseStyles } from 'react-jss';
-import { useInView } from 'react-intersection-observer';
 import clsx from 'clsx';
 import { useForm, Form } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 import { Theme } from '../styles/theme';
+import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   formWrapper: {
@@ -13,11 +14,6 @@ const useStyles = createUseStyles((theme: Theme) => ({
     alignItems: 'center',
     textTransform: 'uppercase',
     marginTop: 45,
-    opacity: 0,
-    transition: 'all 1s',
-  },
-  op: {
-    opacity: 1,
   },
   formHeading: {
     fontFamily: theme.font.rammillas,
@@ -92,6 +88,17 @@ const useStyles = createUseStyles((theme: Theme) => ({
     marginBottom: 30,
     width: '100%',
   },
+  successMessage: {
+    fontFamily: theme.font.commons,
+    textTransform: 'uppercase',
+    fontSize: 16,
+    lineHeight: '16px',
+    padding: [10, 4, 8, 4],
+    verticalAlign: 'middle',
+    width: 310,
+    color: 'black !important',
+    textAlign: 'center',
+  },
   submitButton: {
     appearance: 'none',
     border: '1px solid black',
@@ -110,7 +117,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     },
     '&:hover': {
       backgroundColor: 'black',
-      color: 'white',
+      color: 'white !important',
     },
   },
   error: {
@@ -131,10 +138,7 @@ const validationShema = yup.object({
 export function FinalForm() {
   const classes = useStyles();
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+  const [success, setSuccess] = useState(false);
 
   const {
     control,
@@ -144,125 +148,140 @@ export function FinalForm() {
   } = useForm({ mode: 'onSubmit', resolver: yupResolver(validationShema) });
 
   return (
-    <div
-      className={clsx(classes.formWrapper, inView ? classes.op : '')}
-      ref={ref}
-    >
-      <span className={classes.formHeading}>анкета гостя</span>
-      <span className={classes.formSmallHeading}>
-        пожалуйста, заполните данную
-        <br />
-        форму до 30.06.2024
-      </span>
-      <Form
-        onSubmit={async ({ formData }) => {
-          await fetch('https://sheetdb.io/api/v1/96vey8ogze09t', {
-            method: 'POST',
-            body: formData,
-          });
-        }}
-        control={control}
-        className={classes.formContainer}
-      >
-        <input
-          {...register('name')}
-          className={classes.terxtInput}
-          placeholder="ВАШЕ ИМЯ И ФАМИЛИЯ..."
-        />
+    <AnimatedBaseLayout>
+      <div className={classes.formWrapper}>
+        <span className={classes.formHeading}>анкета гостя</span>
+        <span className={classes.formSmallHeading}>
+          пожалуйста, заполните данную
+          <br />
+          форму до 30.06.2024
+        </span>
+        <Form
+          onSubmit={async ({ formData }) => {
+            await fetch('https://sheetdb.io/api/v1/96vey8ogze09t', {
+              method: 'POST',
+              body: formData,
+            });
+          }}
+          onSubmitCapture={() => {
+            localStorage.setItem('Submited', 'true');
+            setSuccess(true);
+          }}
+          control={control}
+          className={classes.formContainer}
+          validateStatus={(status) => status === 201}
+        >
+          <input
+            {...register('name')}
+            className={classes.terxtInput}
+            placeholder="ВАШЕ ИМЯ И ФАМИЛИЯ..."
+          />
 
-        <label className={classes.radioInputLabel}>
-          Подтвердите свое присутствие:
-        </label>
-        <div className={classes.readioOption}>
-          <div
-            className={classes.radioInput}
-            onClick={() => setValue('presence', 'я приду / мы придем')}
-          >
-            <input
-              {...register('presence')}
-              type="radio"
-              value="я приду / мы придем"
-              className={classes.radioInputCircle}
-            />
-            <label className={classes.radioLabel}>
-              я приду / мы придем
-            </label>
+          <label className={classes.radioInputLabel}>
+            Подтвердите свое присутствие:
+          </label>
+          <div className={classes.readioOption}>
+            <div
+              className={classes.radioInput}
+              onClick={() => setValue('presence', 'я приду / мы придем')}
+            >
+              <input
+                {...register('presence')}
+                type="radio"
+                value="я приду / мы придем"
+                className={classes.radioInputCircle}
+              />
+              <label className={classes.radioLabel}>
+                я приду / мы придем
+              </label>
+            </div>
+
+            <div
+              className={classes.radioInput}
+              onClick={() => setValue('presence', 'скажем / скажу позже')}
+            >
+              <input
+                {...register('presence')}
+                type="radio"
+                value="скажем / скажу позже"
+                className={classes.radioInputCircle}
+              />
+              <label className={classes.radioLabel}>
+                скажем / скажу позже
+              </label>
+            </div>
+
+            <div
+              className={classes.radioInput}
+              onClick={() => setValue(
+                'presence',
+                'к сожалению, меня не будет',
+              )}
+            >
+              <input
+                {...register('presence')}
+                type="radio"
+                value="к сожалению, меня не будет"
+                className={classes.radioInputCircle}
+              />
+              <label className={classes.radioLabel}>
+                к сожалению, меня не будет
+              </label>
+            </div>
           </div>
 
-          <div
-            className={classes.radioInput}
-            onClick={() => setValue('presence', 'скажем / скажу позже')}
-          >
-            <input
-              {...register('presence')}
-              type="radio"
-              value="скажем / скажу позже"
-              className={classes.radioInputCircle}
-            />
-            <label className={classes.radioLabel}>
-              скажем / скажу позже
-            </label>
+          <label className={classes.radioInputLabel}>
+            Вы сможете приоединиться:
+            {' '}
+          </label>
+          <div className={classes.readioOption}>
+            <div
+              className={classes.radioInput}
+              onClick={() => setValue('registry', 'в загс и на ужине')}
+            >
+              <input
+                {...register('registry')}
+                type="radio"
+                value="в загс и на ужине"
+                className={classes.radioInputCircle}
+              />
+              <label className={classes.radioLabel}>
+                в загс и на ужине
+              </label>
+            </div>
+            <div
+              className={classes.radioInput}
+              onClick={() => setValue('registry', 'Только на ужин')}
+            >
+              <input
+                {...register('registry')}
+                type="radio"
+                value="Только на ужин"
+                className={classes.radioInputCircle}
+              />
+              <label className={classes.radioLabel}>
+                Только на ужин
+              </label>
+            </div>
           </div>
 
-          <div
-            className={classes.radioInput}
-            onClick={() => setValue('presence', 'к сожалению, меня не будет')}
-          >
-            <input
-              {...register('presence')}
-              type="radio"
-              value="к сожалению, меня не будет"
-              className={classes.radioInputCircle}
-            />
-            <label className={classes.radioLabel}>
-              к сожалению, меня не будет
-            </label>
-          </div>
-        </div>
-
-        <label className={classes.radioInputLabel}>
-          Вы сможете приоединиться:
-          {' '}
-        </label>
-        <div className={classes.readioOption}>
-          <div
-            className={classes.radioInput}
-            onClick={() => setValue('registry', 'в загс и на ужине')}
-          >
-            <input
-              {...register('registry')}
-              type="radio"
-              value="в загс и на ужине"
-              className={classes.radioInputCircle}
-            />
-            <label className={classes.radioLabel}>
-              в загс и на ужине
-            </label>
-          </div>
-          <div
-            className={classes.radioInput}
-            onClick={() => setValue('registry', 'Только на ужин')}
-          >
-            <input
-              {...register('registry')}
-              type="radio"
-              value="Только на ужин"
-              className={classes.radioInputCircle}
-            />
-            <label className={classes.radioLabel}>
-              Только на ужин
-            </label>
-          </div>
-        </div>
-
-        <button className={classes.submitButton}>Отправить</button>
-        {(errors.name || errors.registry || errors.presence) && (
-        <p className={classes.error}>
-          Необходимо ответить на все вопросы!
-        </p>
-        )}
-      </Form>
-      <span className={classes.formBye}>до встречи! </span>
-    </div>
+          {success || localStorage.getItem('Submited') === 'true' ? (
+            <span className={classes.successMessage}>
+              Анкета отправлена успешно!
+            </span>
+          ) : (
+            <button className={classes.submitButton}>
+              Отправить
+            </button>
+          )}
+          {(errors.name || errors.registry || errors.presence) && (
+            <p className={classes.error}>
+              Необходимо ответить на все вопросы!
+            </p>
+          )}
+        </Form>
+        <span className={classes.formBye}>до встречи! </span>
+      </div>
+    </AnimatedBaseLayout>
   );
 }
