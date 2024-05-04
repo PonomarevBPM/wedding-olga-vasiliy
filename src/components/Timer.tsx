@@ -23,6 +23,11 @@ const useStyle = createUseStyles(() => ({
     fontFamily: 'TTRamillas',
     fontSize: 14,
   },
+  warning: {
+    fontFamily: 'BrownSugar',
+    fontSize: 26,
+    textTransform: 'uppercase',
+  },
 }));
 
 export function Timer() {
@@ -33,7 +38,7 @@ export function Timer() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = 'August, 4, 2024';
+  const deadline = '04 Aug 2024 13:40:00 GMT';
   const zeroPad = (num: number) => String(num).padStart(2, '0');
 
   const getTime = (deadline: string) => {
@@ -51,7 +56,9 @@ export function Timer() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
+  return seconds < 0 ? (
+    <span className={classes.warning}>Мы вас уже ждем, поторопись!</span>
+  ) : (
     <div className={classes.timer}>
       <div className={classes.timerItem}>
         <span className={classes.number}>{zeroPad(days)}</span>
