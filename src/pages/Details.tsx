@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { useParams } from 'react-router-dom';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
@@ -26,17 +27,30 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function Details() {
   const classes = useStyles();
 
+  const { guestsName } = useParams();
+
   return (
     <AnimatedBaseLayout>
       <div className={classes.detailsContainer}>
         <span className={classes.detailsHeading}>детали</span>
-        <span className={classes.detailsText}>
-          сразу после ужина мы улетаем в
-          <br />
-          путешествие, поэтому самым лучшим
-          <br />
-          подарком будет ”подарок в конвертике”
-        </span>
+        {guestsName === 'SvetaAndIgor' ? (
+          <span className={classes.detailsText}>
+            если вы ломаете голову над тем, что нам
+            <br />
+            подарить, то самым лучшим подарком
+            <br />
+            будет ”подарок в конвертике”
+          </span>
+        ) : (
+          <span className={classes.detailsText}>
+            сразу после ужина мы улетаем в
+            <br />
+            путешествие, поэтому самым лучшим
+            <br />
+            подарком будет ”подарок в конвертике”
+          </span>
+        )}
+
         <img src="\imgs\IMG_5431.JPG" style={{ width: 100 }} />
         <span className={classes.detailsText}>
           приятным КОМПЛИМЕНТОМ для нас
