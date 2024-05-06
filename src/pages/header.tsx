@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { useParams } from 'react-router-dom';
 import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -67,12 +68,29 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export function Header() {
   const classes = useStyles();
+
+  const { guestsName } = useParams();
+
   return (
     <header className={classes.header}>
       <div className={classes.letterA}>A</div>
       <div className={classes.headerContent}>
-        <span className={classes.invite}>ПРИГЛАШЕНИЕ НА СВАДЬБУ</span>
-        <span className={classes.date}>04.08.2024</span>
+        {guestsName === 'SvetaAndIgor' ? (
+          <>
+            <span className={classes.invite}>
+              HOCHZEITSEINLADUNG
+            </span>
+            <span className={classes.date}>19.08.2024</span>
+          </>
+        ) : (
+          <>
+            <span className={classes.invite}>
+              ПРИГЛАШЕНИЕ НА СВАДЬБУ
+            </span>
+            <span className={classes.date}>04.08.2024</span>
+          </>
+        )}
+
         <span className={classes.names}>valeriya & Andrey</span>
       </div>
       <div className={classes.letterV}>V</div>

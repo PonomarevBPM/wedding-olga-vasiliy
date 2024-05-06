@@ -70,7 +70,7 @@ export function NamedStatement() {
             className={classes.pin}
           />
         </span>
-        <Timer />
+        <Timer isSalou={guestsName === 'SvetaAndIgor'} />
       </div>
     </AnimatedBaseLayout>
   );
