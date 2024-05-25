@@ -17,6 +17,7 @@ const guests = new Map([
   ['DanyaAndNastya', 'Даня и Настя'],
   ['ArtemAndNastya', 'Артем и Настя'],
   ['SvetaAndIgor', 'Трифоновы'],
+  ['Kamilla', 'Камилла'],
 ]);
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -36,7 +37,8 @@ export function GuestName({ guest }: Props) {
       <div className={classes.statementNames}>
         {guest === 'Darina'
                 || guest === 'Vika'
-                || guest === 'Babushka' ? (
+                || guest === 'Babushka'
+                || guest === 'Kamilla' ? (
                   <span>Дорогая </span>
           ) : (
             <>
