@@ -43,7 +43,7 @@ export function Inspiration() {
         <span className={classes.inspirationText}>INSPIRATION</span>
         <img
           className={classes.inspirationVideo}
-          src="public\imgs\inspiration\photo_2024-06-09_13-59-36.jpg"
+          src="\imgs\inspiration\photo_2024-06-09_13-59-36.jpg"
         />
       </div>
     </AnimatedBaseLayout>
