@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
-import { imgInsp } from '#id/imgs/inspiration/photo_2024-06-09_13-59-36.jpg';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   inspirationContainer: {
