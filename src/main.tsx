@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/:guestsName" element={<App />} />
+          <Route path="/VD/:guestsName" element={<App />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
