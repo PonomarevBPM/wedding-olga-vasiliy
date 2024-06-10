@@ -60,41 +60,39 @@ export function DressCode() {
   const classes = useStyles();
 
   return (
-   <AnimatedBaseLayout>
-     <div className={classes.dressCodeContainer}>
-      <span className={classes.dressCodeHeading}>Dress code</span>
-      <span className={classes.dressCodeText}>
-        мы очень старались сделать наш праздник
-        <br />
-        красивым, поэтому для нас важно видеть
-        <br />
-        гостей в цветовой ПАЛИТРЕ нашего
-        <br />
-        мероприятия
-      </span>
-      <div className={classes.colorsContainer}>
-        <ColorRef
-          imgSrc="\imgs\colorRef\scale_2400.jpg"
-          className={classes.blackColor}
-        >
-          Черный цвет
-        </ColorRef>
-        <ColorRef
-          imgSrc="\imgs\colorRef\Black and white.jpg"
-          className={classes.whiteColor}
-        >
-          БЕЛЫЙ ЦВЕТ
-        </ColorRef>
-        <ColorRef
-          imgSrc="\imgs\colorRef\16538611_silver-foil-28cm-x-45cm-scan.jpg"
-          className={classes.blackColor}
-        >
-          МЕТАЛЛИЧЕСКИЕ
+    <AnimatedBaseLayout>
+      <div className={classes.dressCodeContainer}>
+        <span className={classes.dressCodeHeading}>Dress code</span>
+        <span className={classes.dressCodeText}>
+          мы очень старались сделать наш праздник
           <br />
-          АКЦЕНТЫ И ДЕТАЛИ
-        </ColorRef>
+          красивым, поэтому для нас важно видеть
+          <br />
+          гостей в цветовой ПАЛИТРЕ нашего
+          <br />
+          мероприятия
+        </span>
+        <div className={classes.colorsContainer}>
+          <ColorRef
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/red.JPG`}
+            className={classes.blackColor}
+          >
+            винный
+          </ColorRef>
+          <ColorRef
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/orange.JPG`}
+            className={classes.whiteColor}
+          >
+            насыщенно ораньжевый
+          </ColorRef>
+          <ColorRef
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/coffee.JPG`}
+            className={classes.blackColor}
+          >
+            кофе с молоком
+          </ColorRef>
+        </div>
       </div>
-    </div>
-   </AnimatedBaseLayout>
+    </AnimatedBaseLayout>
   );
 }

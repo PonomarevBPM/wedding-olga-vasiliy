@@ -35,7 +35,23 @@ export function Details() {
           <br />
           но предпочтение отдадим конверту
         </span>
-        <img src="\imgs\IMG_5431.JPG" style={{ width: 100 }} />
+        <img
+          src={`${import.meta.env.BASE_URL}imgs/details/letter.JPG`}
+          style={{ width: 100 }}
+        />
+        <span className={classes.detailsText}>
+          По всем вопросам Вы можете обращаться
+          <br />
+          к нашим свадебным организаторам:
+          <br />
+          Дарина +7 966 045-44-49
+          <br />
+          Валерия +7 909 660-79-72
+        </span>
+        <img
+          src={`${import.meta.env.BASE_URL}imgs/details/dart_logo.png`}
+          style={{ width: 150, marginTop: 15 }}
+        />
       </div>
     </AnimatedBaseLayout>
   );

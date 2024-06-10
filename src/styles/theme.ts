@@ -17,8 +17,8 @@ export const theme: Theme = {
   color: {
     black: 'rgb(0,0,0)',
     white: 'rgb(255,255,255)',
-    headerBG: '#f4d4d9',
-    headerMain: '#8a001a',
+    headerBG: 'white',
+    headerMain: 'black',
   },
   font: {
     rammillas: 'TTRamillas',

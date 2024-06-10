@@ -8,6 +8,7 @@ interface Props {
 const useStyles = createUseStyles(() => ({
   workArea: {
     padding: [0, 100],
+    overflowX: 'hidden',
   },
 }));
 

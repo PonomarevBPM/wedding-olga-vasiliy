@@ -34,12 +34,12 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   pin: {
     aspectRatio: 1,
-    width: 110,
+    width: 100,
     position: 'absolute',
-    top: '-65%',
-    left: '75%',
+    top: '-150%',
+    left: '85%',
     zIndex: -1,
-    transform: 'rotate(-25deg)',
+    transform: 'rotate(0)',
   },
 }));
 
@@ -62,7 +62,7 @@ export function NamedStatement() {
         <span className={classes.timerHeading}>
           ДО СВАДЬБЫ ОСТАЛОСЬ
           <img
-            src="\imgs\photo_2024-04-24_15-13-49.jpg"
+            src={`${import.meta.env.BASE_URL}imgs/namedStatement/pomegrante.JPG`}
             className={classes.pin}
           />
         </span>

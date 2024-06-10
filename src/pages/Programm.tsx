@@ -1,16 +1,15 @@
 import { createUseStyles } from 'react-jss';
-import { useParams } from 'react-router-dom';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   programmContainer: {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: 450,
-    justifyContent: 'space-around',
     marginTop: 30,
+    gap: 45,
   },
   programmHeading: {
     fontFamily: theme.font.rammillas,
@@ -25,6 +24,13 @@ const useStyles = createUseStyles((theme: Theme) => ({
     fontFamily: theme.font.rammillas,
     textAlign: 'center',
     textTransform: 'uppercase',
+  },
+  leave: {
+    position: 'absolute',
+    left: '5%',
+    top: '40%',
+    width: 75,
+    transform: 'rotate(-215deg)',
   },
   programmBlock: {
     display: 'flex',
@@ -57,52 +63,31 @@ const useStyles = createUseStyles((theme: Theme) => ({
 export function Programm() {
   const classes = useStyles();
 
-  const { guestsName } = useParams();
-
   return (
     <AnimatedBaseLayout>
       <div className={classes.programmContainer}>
         <span className={classes.programmHeading}>Программа Дня</span>
-        {guestsName === 'SvetaAndIgor' ? (
-          <>
-            <div className={classes.programmBlock}>
-              <span className={classes.programmTime}>14:40</span>
-              <span className={classes.programmText}>
-                Welcome cocktail
-              </span>
-            </div>
-            <div className={classes.programmBlock}>
-              <span className={classes.programmTime}>15:00</span>
-              <span className={classes.programmText}>
-                Branch in H10 Salou Princess
-                <br />
-                Cambrils, Tarragona
-              </span>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className={classes.programmBlock}>
-              <span className={classes.programmTime}>16:40</span>
-              <span className={classes.programmText}>
-                РОСПИСЬ В ОСОБНЯКЕ “РОЯЛ”
-                <br />
-                {' '}
-                Малая Ордынка ул., 14
-              </span>
-            </div>
-            <div className={classes.programmBlock}>
-              <span className={classes.programmTime}>17:40</span>
-              <span className={classes.programmText}>
-                УЖИН В РЕСТОРАНЕ “КАРЛСОН”
-                <br />
-                {' '}
-                Овчинниковская наб., 20/1
-              </span>
-            </div>
-          </>
-        )}
 
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>13:00</span>
+          <span className={classes.programmText}>Сбор гостей</span>
+        </div>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>16:00</span>
+          <span className={classes.programmText}>Церемония</span>
+        </div>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>17:00</span>
+          <span className={classes.programmText}>Начало ужина</span>
+        </div>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>21:30</span>
+          <span className={classes.programmText}>Вкусный тортик</span>
+        </div>
+        <img
+          className={classes.leave}
+          src={`${import.meta.env.BASE_URL}imgs/program/leave.JPG`}
+        />
         <span className={classes.programmDate}>31.08.24</span>
       </div>
     </AnimatedBaseLayout>

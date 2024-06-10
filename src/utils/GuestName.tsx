@@ -35,19 +35,20 @@ export function GuestName({ guest }: Props) {
     const classes = useStyles();
     return (
       <div className={classes.statementNames}>
-        {guest === 'Darina'
+        {/* {guest === 'Darina'
                 || guest === 'Vika'
                 || guest === 'Babushka'
                 || guest === 'Kamilla' ? (
-                  <span>Дорогая </span>
+                  <span>Дорогая и любимая </span>
           ) : (
             <>
-              <span>Дорогие</span>
+              <span>Дорогие и любимые</span>
               <br />
             </>
           )}
 
-        <span>{guests.get(guest)}</span>
+        <span>{guests.get(guest)}</span> */}
+        <span>Дорогие и любимые</span>
       </div>
     );
   }

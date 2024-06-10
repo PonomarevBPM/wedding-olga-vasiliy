@@ -20,7 +20,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     textOrientation: 'upright',
   },
   inspirationVideo: {
-    height: 600,
+    height: 520,
   },
   '@media not all and (min-resolution:.001dpcm)': {
     inspirationText: {
@@ -36,12 +36,11 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export function Inspiration() {
   const classes = useStyles();
-  console.log();
 
   return (
     <AnimatedBaseLayout>
       <div className={classes.inspirationContainer}>
-        <span className={classes.inspirationText}>INSPIRATION</span>
+        <span className={classes.inspirationText}>INVITATION</span>
         <img
           className={classes.inspirationVideo}
           src={`${import.meta.env.BASE_URL}imgs/inspiration/photo_2024-06-09_13-59-36.jpg`}
