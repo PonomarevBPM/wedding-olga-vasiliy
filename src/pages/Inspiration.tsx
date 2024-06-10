@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
+import { imgInsp } from '#id/imgs/inspiration/photo_2024-06-09_13-59-36.jpg';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   inspirationContainer: {
@@ -36,6 +37,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export function Inspiration() {
   const classes = useStyles();
+  console.log();
 
   return (
     <AnimatedBaseLayout>
@@ -43,7 +45,7 @@ export function Inspiration() {
         <span className={classes.inspirationText}>INSPIRATION</span>
         <img
           className={classes.inspirationVideo}
-          src="\imgs\inspiration\photo_2024-06-09_13-59-36.jpg"
+          src={`${import.meta.env.BASE_URL}imgs/inspiration/photo_2024-06-09_13-59-36.jpg`}
         />
       </div>
     </AnimatedBaseLayout>
