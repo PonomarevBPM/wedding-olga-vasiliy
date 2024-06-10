@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import { useParams } from 'react-router-dom';
 import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
