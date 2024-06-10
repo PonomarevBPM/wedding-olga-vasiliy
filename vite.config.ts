@@ -7,4 +7,5 @@ export default defineConfig({
     cors: false,
   },
   plugins: [react()],
+  base: '/VD/dist/',
 });
