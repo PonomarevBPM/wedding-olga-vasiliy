@@ -2,8 +2,6 @@ import { createUseStyles } from 'react-jss';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
-const horizontal = 750;
-
 const useStyles = createUseStyles((theme: Theme) => ({
   refsContainer: {
     display: 'flex',

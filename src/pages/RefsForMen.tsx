@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 
