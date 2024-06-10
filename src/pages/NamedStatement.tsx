@@ -53,15 +53,11 @@ export function NamedStatement() {
       <div className={classes.statementContainer}>
         <GuestName guest={guestsName} />
         <span className={classes.statementText}>
-          В нашей жизни предстоит важный для нас
+          31 августа станет днем появления
           <br />
-          день. Мы хотим, чтоб в этот момент рядом с
+          нашей семьи. Мы будем рады разделить
           <br />
-          нами были самые близкие и дорогие для нас
-          <br />
-          люди. Будем рады видеть вас в день нашей
-          <br />
-          росписи!
+          с вами этот счастливый момент.
         </span>
         <span className={classes.timerHeading}>
           ДО СВАДЬБЫ ОСТАЛОСЬ
@@ -70,7 +66,7 @@ export function NamedStatement() {
             className={classes.pin}
           />
         </span>
-        <Timer isSalou={guestsName === 'SvetaAndIgor'} />
+        <Timer />
       </div>
     </AnimatedBaseLayout>
   );

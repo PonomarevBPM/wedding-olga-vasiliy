@@ -153,11 +153,11 @@ export function FinalForm() {
         <span className={classes.formSmallHeading}>
           пожалуйста, заполните данную
           <br />
-          форму до 30.06.2024
+          форму до 25.07.2024
         </span>
         <Form
           onSubmit={async ({ formData }) => {
-            await fetch('https://sheetdb.io/api/v1/96vey8ogze09t', {
+            await fetch('https://sheetdb.io/api/v1/3x4iazcg30cum', {
               method: 'POST',
               body: formData,
             });

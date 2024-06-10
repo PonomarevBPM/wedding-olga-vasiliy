@@ -9,9 +9,9 @@ const useStyles = createUseStyles((theme: Theme) => ({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: theme.color.black,
+    backgroundColor: theme.color.headerBG,
     height: '100svh',
-    color: theme.color.white,
+    color: theme.color.headerMain,
     position: 'relative',
   },
   headerContent: {
@@ -21,12 +21,12 @@ const useStyles = createUseStyles((theme: Theme) => ({
     gap: 15,
     '&::after': {
       content: '""',
-      borderLeft: '1px solid white',
+      borderLeft: `1px solid ${theme.color.headerMain}`,
       height: '10svh',
     },
     '&::before': {
       content: '""',
-      borderLeft: '1px solid white',
+      borderLeft: `1px solid ${theme.color.headerMain}`,
       height: '10svh',
     },
   },
@@ -68,30 +68,13 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export function Header() {
   const classes = useStyles();
-
-  const { guestsName } = useParams();
-
   return (
     <header className={classes.header}>
-      <div className={classes.letterA}>A</div>
+      <div className={classes.letterA}>D</div>
       <div className={classes.headerContent}>
-        {guestsName === 'SvetaAndIgor' ? (
-          <>
-            <span className={classes.invite}>
-              HOCHZEITSEINLADUNG
-            </span>
-            <span className={classes.date}>19.08.2024</span>
-          </>
-        ) : (
-          <>
-            <span className={classes.invite}>
-              ПРИГЛАШЕНИЕ НА СВАДЬБУ
-            </span>
-            <span className={classes.date}>04.08.2024</span>
-          </>
-        )}
-
-        <span className={classes.names}>valeriya & Andrey</span>
+        <span className={classes.invite}>ПРИГЛАШЕНИЕ НА СВАДЬБУ</span>
+        <span className={classes.date}>31.08.2024</span>
+        <span className={classes.names}>Vera & Dmitry</span>
       </div>
       <div className={classes.letterV}>V</div>
     </header>

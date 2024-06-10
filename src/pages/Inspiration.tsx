@@ -41,13 +41,9 @@ export function Inspiration() {
     <AnimatedBaseLayout>
       <div className={classes.inspirationContainer}>
         <span className={classes.inspirationText}>INSPIRATION</span>
-        <video
-          src="\video\IMG_2083.MOV"
-          id="vid"
+        <img
           className={classes.inspirationVideo}
-          autoPlay
-          controls
-          preload="auto"
+          src="public\imgs\inspiration\photo_2024-06-09_13-59-36.jpg"
         />
       </div>
     </AnimatedBaseLayout>

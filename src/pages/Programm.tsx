@@ -103,9 +103,7 @@ export function Programm() {
           </>
         )}
 
-        <span className={classes.programmDate}>
-          {guestsName === 'SvetaAndIgor' ? '19.08.24' : '04.08.24'}
-        </span>
+        <span className={classes.programmDate}>31.08.24</span>
       </div>
     </AnimatedBaseLayout>
   );
