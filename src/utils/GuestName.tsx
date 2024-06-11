@@ -23,7 +23,7 @@ interface Props {
 const useStyles = createUseStyles((theme: Theme) => ({
   statementNames: {
     fontFamily: theme.font.rammillas,
-    fontSize: 36,
+    fontSize: 28,
     textTransform: 'uppercase',
     textAlign: 'center',
     marginBottom: 30,

@@ -8,7 +8,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 45,
     gap: 45,
   },
   programmHeading: {

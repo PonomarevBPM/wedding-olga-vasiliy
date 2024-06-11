@@ -1,10 +1,11 @@
 import { createUseStyles } from 'react-jss';
-import { useForm, Form } from 'react-hook-form';
+import { useForm, Form, FormProvider } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
+import { CheckBoxGroup } from '../components/CheckboxGroup';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   formWrapper: {
@@ -131,7 +132,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
 const validationShema = yup.object({
   name: yup.string().required(),
   presence: yup.string().required(),
-  registry: yup.string().required(),
+  alcohol: yup.string().trim().required(),
 });
 
 export function FinalForm() {
@@ -139,12 +140,10 @@ export function FinalForm() {
 
   const [success, setSuccess] = useState(false);
 
-  const {
-    control,
-    register,
-    setValue,
-    formState: { errors },
-  } = useForm({ mode: 'onSubmit', resolver: yupResolver(validationShema) });
+  const { ...methods } = useForm({
+    mode: 'onSubmit',
+    resolver: yupResolver(validationShema),
+  });
 
   return (
     <AnimatedBaseLayout>
@@ -160,18 +159,17 @@ export function FinalForm() {
             await fetch('https://sheetdb.io/api/v1/3x4iazcg30cum', {
               method: 'POST',
               body: formData,
+            }).then(() => {
+              localStorage.setItem('Submited', 'true');
+              setSuccess(true);
             });
           }}
-          onSubmitCapture={() => {
-            localStorage.setItem('Submited', 'true');
-            setSuccess(true);
-          }}
-          control={control}
+          control={methods.control}
           className={classes.formContainer}
           validateStatus={(status) => status === 201}
         >
           <input
-            {...register('name')}
+            {...methods.register('name')}
             className={classes.terxtInput}
             placeholder="ВАШЕ ИМЯ И ФАМИЛИЯ..."
           />
@@ -182,10 +180,13 @@ export function FinalForm() {
           <div className={classes.readioOption}>
             <div
               className={classes.radioInput}
-              onClick={() => setValue('presence', 'я приду / мы придем')}
+              onClick={() => methods.setValue(
+                'presence',
+                'я приду / мы придем',
+              )}
             >
               <input
-                {...register('presence')}
+                {...methods.register('presence')}
                 type="radio"
                 value="я приду / мы придем"
                 className={classes.radioInputCircle}
@@ -197,10 +198,13 @@ export function FinalForm() {
 
             <div
               className={classes.radioInput}
-              onClick={() => setValue('presence', 'скажем / скажу позже')}
+              onClick={() => methods.setValue(
+                'presence',
+                'скажем / скажу позже',
+              )}
             >
               <input
-                {...register('presence')}
+                {...methods.register('presence')}
                 type="radio"
                 value="скажем / скажу позже"
                 className={classes.radioInputCircle}
@@ -212,13 +216,13 @@ export function FinalForm() {
 
             <div
               className={classes.radioInput}
-              onClick={() => setValue(
+              onClick={() => methods.setValue(
                 'presence',
                 'к сожалению, меня не будет',
               )}
             >
               <input
-                {...register('presence')}
+                {...methods.register('presence')}
                 type="radio"
                 value="к сожалению, меня не будет"
                 className={classes.radioInputCircle}
@@ -230,39 +234,24 @@ export function FinalForm() {
           </div>
 
           <label className={classes.radioInputLabel}>
-            Вы сможете приоединиться:
-            {' '}
+            Предпочтения по напиткам
           </label>
-          <div className={classes.readioOption}>
-            <div
-              className={classes.radioInput}
-              onClick={() => setValue('registry', 'в загс и на ужине')}
-            >
-              <input
-                {...register('registry')}
-                type="radio"
-                value="в загс и на ужине"
-                className={classes.radioInputCircle}
-              />
-              <label className={classes.radioLabel}>
-                в загс и на ужине
-              </label>
-            </div>
-            <div
-              className={classes.radioInput}
-              onClick={() => setValue('registry', 'Только на ужин')}
-            >
-              <input
-                {...register('registry')}
-                type="radio"
-                value="Только на ужин"
-                className={classes.radioInputCircle}
-              />
-              <label className={classes.radioLabel}>
-                Только на ужин
-              </label>
-            </div>
-          </div>
+          <FormProvider {...methods}>
+            <CheckBoxGroup
+              options={[
+                'Игристое',
+                'Вино',
+                'Пиво',
+                'Водка',
+                'Виски',
+                'Джин',
+                'Ром',
+                'Что-то безалкогольное',
+              ]}
+              {...methods.register('alcohol')}
+              name="alcohol"
+            />
+          </FormProvider>
 
           {success || localStorage.getItem('Submited') === 'true' ? (
             <span className={classes.successMessage}>
@@ -273,10 +262,12 @@ export function FinalForm() {
               Отправить
             </button>
           )}
-          {(errors.name || errors.registry || errors.presence) && (
-            <p className={classes.error}>
-              Необходимо ответить на все вопросы!
-            </p>
+          {(methods.formState.errors.name
+                        || methods.formState.errors.alcohol
+                        || methods.formState.errors.presence) && (
+                        <p className={classes.error}>
+                          Необходимо ответить на все вопросы!
+                        </p>
           )}
         </Form>
         <span className={classes.formBye}>до встречи! </span>

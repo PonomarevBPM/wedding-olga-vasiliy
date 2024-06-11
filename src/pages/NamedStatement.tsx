@@ -14,7 +14,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   statementNames: {
     fontFamily: theme.font.rammillas,
-    fontSize: 36,
+    fontSize: 25,
     textTransform: 'uppercase',
     textAlign: 'center',
     marginBottom: 30,
@@ -24,7 +24,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     fontSize: 16,
     textAlign: 'center',
     textTransform: 'uppercase',
-    marginBottom: 30,
+    marginBottom: 45,
   },
   timerHeading: {
     fontFamily: theme.font.rammillasBold,

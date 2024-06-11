@@ -20,6 +20,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   img: {
     width: 340,
+    marginBottom: 30,
   },
 }));
 

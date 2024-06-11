@@ -50,7 +50,7 @@ export function Details() {
         </span>
         <img
           src={`${import.meta.env.BASE_URL}imgs/details/dart_logo.png`}
-          style={{ width: 150, marginTop: 15 }}
+          style={{ width: 150, marginTop: 20 }}
         />
       </div>
     </AnimatedBaseLayout>
