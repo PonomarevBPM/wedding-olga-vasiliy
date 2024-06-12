@@ -57,7 +57,7 @@ export function NamedStatement() {
           <br />
           нашей семьи. Мы будем рады разделить
           <br />
-          с вами этот счастливый момент.
+          с вами этот счастливый момент!
         </span>
         <span className={classes.timerHeading}>
           ДО СВАДЬБЫ ОСТАЛОСЬ
