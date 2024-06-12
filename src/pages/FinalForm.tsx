@@ -22,7 +22,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     marginBottom: 30,
   },
   formSmallHeading: {
-    fontFamily: theme.font.rammillasBold,
+    fontFamily: theme.font.commons,
     textAlign: 'center',
     marginBottom: 30,
   },
