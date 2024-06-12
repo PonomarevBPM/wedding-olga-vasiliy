@@ -234,7 +234,7 @@ export function FinalForm() {
           </div>
 
           <label className={classes.radioInputLabel}>
-            Предпочтения по напиткам
+            Предпочтения по напиткам:
           </label>
           <FormProvider {...methods}>
             <CheckBoxGroup

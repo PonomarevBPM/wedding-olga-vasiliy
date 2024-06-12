@@ -27,6 +27,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
   },
   leave: {
     position: 'absolute',
+    zIndex: '-1',
     left: '5%',
     top: '40%',
     width: 75,
