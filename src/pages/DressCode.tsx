@@ -83,7 +83,7 @@ export function DressCode() {
             imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/orange.JPG`}
             className={classes.whiteColor}
           >
-            насыщенный ораньжевый
+            насыщенный оранжевый
           </ColorRef>
           <ColorRef
             imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/coffee.JPG`}

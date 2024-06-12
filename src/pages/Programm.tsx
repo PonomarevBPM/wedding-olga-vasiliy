@@ -70,7 +70,7 @@ export function Programm() {
         <span className={classes.programmHeading}>Программа Дня</span>
 
         <div className={classes.programmBlock}>
-          <span className={classes.programmTime}>13:00</span>
+          <span className={classes.programmTime}>15:00</span>
           <span className={classes.programmText}>Сбор гостей</span>
         </div>
         <div className={classes.programmBlock}>
