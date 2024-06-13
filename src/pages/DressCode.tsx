@@ -72,6 +72,11 @@ export function DressCode() {
           <br />
           мероприятия
         </span>
+        <span className={classes.dressCodeText}>
+          Просим воздержаться от таких цветов,
+          <br />
+          как белый, черный и синий
+        </span>
         <div className={classes.colorsContainer}>
           <ColorRef
             imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/red.JPG`}
