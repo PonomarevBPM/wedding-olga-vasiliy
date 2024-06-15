@@ -82,8 +82,12 @@ export function Programm() {
           <span className={classes.programmText}>Начало ужина</span>
         </div>
         <div className={classes.programmBlock}>
-          <span className={classes.programmTime}>21:30</span>
-          <span className={classes.programmText}>Вкусный тортик</span>
+          <span className={classes.programmTime}>20:00</span>
+          <span className={classes.programmText}>Party</span>
+        </div>
+        <div className={classes.programmBlock}>
+          <span className={classes.programmTime}>23:00</span>
+          <span className={classes.programmText}>Финал вечера </span>
         </div>
         <img
           className={classes.leave}
