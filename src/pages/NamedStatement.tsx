@@ -59,7 +59,7 @@ export function NamedStatement() {
         <span className={classes.timerHeading}>
           ДО СВАДЬБЫ ОСТАЛОСЬ
           <img
-            src={`${import.meta.env.BASE_URL}imgs/namedStatement/pomegrante.JPG`}
+            src={`${import.meta.env.BASE_URL}imgs/namedStatement/timer_detail.png`}
             className={classes.pin}
           />
         </span>

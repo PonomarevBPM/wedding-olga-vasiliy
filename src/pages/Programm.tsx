@@ -30,15 +30,19 @@ const useStyles = createUseStyles((theme: Theme) => ({
     position: 'absolute',
     zIndex: '-1',
     left: '5%',
-    top: '40%',
-    width: 75,
-    transform: 'rotate(-215deg)',
+    top: '5%',
+    width: 150,
+    transform: 'rotate(-30deg)',
   },
   programmBlock: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: 15,
+  },
+  delimiter: {
+    width: 100,
+    marginTop: -30,
   },
   programmDate: {
     display: 'flex',
@@ -95,6 +99,10 @@ export function Programm() {
           src={`${import.meta.env.BASE_URL}imgs/program/leave.JPG`}
         />
         <span className={classes.programmDate}>{header.date}</span>
+        <img
+          className={classes.delimiter}
+          src={`${import.meta.env.BASE_URL}imgs/program/delimiter.JPG`}
+        />
       </div>
     </AnimatedBaseLayout>
   );

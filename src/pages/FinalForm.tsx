@@ -67,10 +67,18 @@ const useStyles = createUseStyles((theme: Theme) => ({
     },
   },
   radioInputLabel: {
+    position: 'relative',
     fontFamily: theme.font.commons,
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 15,
+  },
+  decoration: {
+    position: 'absolute',
+    zIndex: '-1',
+    right: '-20%',
+    top: '330%',
+    width: 110,
   },
   radioLabel: {
     display: 'inline-block',
@@ -152,7 +160,7 @@ export function FinalForm() {
         <span className={classes.formSmallHeading}>
           пожалуйста, заполните данную
           <br />
-          форму до 25.07.2024
+          форму до 05.08.2024
         </span>
         <Form
           onSubmit={async ({ formData }) => {
@@ -171,7 +179,7 @@ export function FinalForm() {
           <input
             {...methods.register('name')}
             className={classes.terxtInput}
-            placeholder="ВАШЕ ИМЕНА И ФАМИЛИИ..."
+            placeholder="ВАШИ ИМЕНА И ФАМИЛИИ..."
           />
 
           <label className={classes.radioInputLabel}>
@@ -235,6 +243,10 @@ export function FinalForm() {
 
           <label className={classes.radioInputLabel}>
             Предпочтения по напиткам:
+            <img
+              className={classes.decoration}
+              src={`${import.meta.env.BASE_URL}imgs/finalForm/decoaretion.JPG`}
+            />
           </label>
           <FormProvider {...methods}>
             <CheckBoxGroup

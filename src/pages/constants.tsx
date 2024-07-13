@@ -23,11 +23,14 @@ export const deadline = '20 Oct 2024 13:40:00 GMT';
 export function LocationText() {
   return (
     <>
-      BLACKWOOD HOUSE
-      <br />
       The Birch
       <br />
-      Московская область, городской округ Солнечногорск,
+      Зал BLACKWOOD HOUSE
+      <br />
+      <br />
+      Московская область,
+      <br />
+      городской округ Солнечногорск,
       <br />
       территориальное управление Пешковское
     </>

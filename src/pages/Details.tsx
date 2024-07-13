@@ -40,9 +40,11 @@ export function Details() {
           style={{ width: 100 }}
         />
         <span className={classes.detailsText}>
-          хотели бы отказаться от живых цветов
+          Если вы планировали подарить нам букет,
           <br />
-          в пользу комнатных растений
+          то в качестве альтернативы мы были бы
+          <br />
+          очень рады комнатному растению
         </span>
         <img
           src={`${import.meta.env.BASE_URL}imgs/details/flower.jpg`}
@@ -52,6 +54,7 @@ export function Details() {
           По всем вопросам Вы можете обращаться
           <br />
           к нашим свадебным организаторам:
+          <br />
           <br />
           Дарина +7 966 045-44-49
           <br />
