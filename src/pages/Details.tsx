@@ -40,6 +40,15 @@ export function Details() {
           style={{ width: 100 }}
         />
         <span className={classes.detailsText}>
+          хотели бы отказаться от живых цветов
+          <br />
+          в пользу комнатных растений
+        </span>
+        <img
+          src={`${import.meta.env.BASE_URL}imgs/details/flower.jpg`}
+          style={{ width: 150 }}
+        />
+        <span className={classes.detailsText}>
           По всем вопросам Вы можете обращаться
           <br />
           к нашим свадебным организаторам:

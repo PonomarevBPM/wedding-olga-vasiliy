@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss';
 import { Theme } from '../styles/theme';
+import { header } from './constants';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   header: {
@@ -69,13 +70,13 @@ export function Header() {
   const classes = useStyles();
   return (
     <header className={classes.header}>
-      <div className={classes.letterA}>D</div>
+      <div className={classes.letterA}>{header.fistInitial}</div>
       <div className={classes.headerContent}>
         <span className={classes.invite}>ПРИГЛАШЕНИЕ НА СВАДЬБУ</span>
-        <span className={classes.date}>31.08.2024</span>
-        <span className={classes.names}>Vera & Dmitry</span>
+        <span className={classes.date}>{header.date}</span>
+        <span className={classes.names}>{header.names}</span>
       </div>
-      <div className={classes.letterV}>V</div>
+      <div className={classes.letterV}>{header.secondInitial}</div>
     </header>
   );
 }

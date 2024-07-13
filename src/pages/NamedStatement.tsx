@@ -4,6 +4,7 @@ import { Timer } from '../components/Timer';
 import { Theme } from '../styles/theme';
 import { GuestName } from '../utils/GuestName';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
+import { NamedStatementText } from './constants';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   statementContainer: {
@@ -53,11 +54,7 @@ export function NamedStatement() {
       <div className={classes.statementContainer}>
         <GuestName guest={guestsName} />
         <span className={classes.statementText}>
-          31 августа станет днем появления
-          <br />
-          нашей семьи. Мы будем рады разделить
-          <br />
-          с вами этот счастливый момент!
+          <NamedStatementText />
         </span>
         <span className={classes.timerHeading}>
           ДО СВАДЬБЫ ОСТАЛОСЬ

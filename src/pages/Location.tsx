@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
 import { Theme } from '../styles/theme';
+import { LocationText } from './constants';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   locationContainer: {
@@ -44,11 +45,7 @@ export function Location() {
           Место проведения
         </span>
         <span className={classes.locationText}>
-          LOFT HALL
-          <br />
-          Зал Grace
-          <br />
-          ул. Ленинская Слобода, 26, стр. 15
+          <LocationText />
         </span>
         <div className={classes.imgContainer}>
           <img

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
+import { deadline } from '../pages/constants';
 
 const useStyle = createUseStyles(() => ({
   number: {
@@ -38,7 +39,6 @@ export function Timer() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = '31 Aug 2024 13:40:00 GMT';
   const zeroPad = (num: number) => String(num).padStart(2, '0');
 
   const getTime = (deadline: string) => {

@@ -64,7 +64,7 @@ export function CheckBoxGroup({ options, name }: Props) {
     let value = '';
     checkedState.forEach((checkbox, index) => {
       if (checkbox) {
-        value += ` ${options[index]}`;
+        value = value ? `${value} | ${options[index]}` : options[index];
       }
     });
     setValue(name, value);

@@ -79,22 +79,28 @@ export function DressCode() {
         </span>
         <div className={classes.colorsContainer}>
           <ColorRef
-            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/red.JPG`}
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/color1.JPG`}
             className={classes.blackColor}
           >
-            винный
+            Бежевый
           </ColorRef>
           <ColorRef
-            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/orange.JPG`}
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/color2.JPG`}
             className={classes.whiteColor}
           >
-            насыщенный оранжевый
+            Персиковый
           </ColorRef>
           <ColorRef
-            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/coffee.JPG`}
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/color3.JPG`}
             className={classes.blackColor}
           >
-            кофе с молоком
+            Охра
+          </ColorRef>
+          <ColorRef
+            imgSrc={`${import.meta.env.BASE_URL}imgs/colorRef/color4.JPG`}
+            className={classes.whiteColor}
+          >
+            Зеленый
           </ColorRef>
         </div>
       </div>

@@ -156,7 +156,7 @@ export function FinalForm() {
         </span>
         <Form
           onSubmit={async ({ formData }) => {
-            await fetch('https://sheetdb.io/api/v1/3x4iazcg30cum', {
+            await fetch('https://sheetdb.io/api/v1/rpih4e17e16ru', {
               method: 'POST',
               body: formData,
             }).then(() => {
@@ -171,7 +171,7 @@ export function FinalForm() {
           <input
             {...methods.register('name')}
             className={classes.terxtInput}
-            placeholder="ВАШЕ ИМЯ И ФАМИЛИЯ..."
+            placeholder="ВАШЕ ИМЕНА И ФАМИЛИИ..."
           />
 
           <label className={classes.radioInputLabel}>

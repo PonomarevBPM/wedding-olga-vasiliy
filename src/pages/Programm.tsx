@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { Theme } from '../styles/theme';
 import { AnimatedBaseLayout } from '../components/AnimatedBaseLayout';
+import { header } from './constants';
 
 const useStyles = createUseStyles((theme: Theme) => ({
   programmContainer: {
@@ -82,7 +83,7 @@ export function Programm() {
           <span className={classes.programmText}>Начало ужина</span>
         </div>
         <div className={classes.programmBlock}>
-          <span className={classes.programmTime}>20:00</span>
+          <span className={classes.programmTime}>19:00</span>
           <span className={classes.programmText}>Party</span>
         </div>
         <div className={classes.programmBlock}>
@@ -93,7 +94,7 @@ export function Programm() {
           className={classes.leave}
           src={`${import.meta.env.BASE_URL}imgs/program/leave.JPG`}
         />
-        <span className={classes.programmDate}>31.08.24</span>
+        <span className={classes.programmDate}>{header.date}</span>
       </div>
     </AnimatedBaseLayout>
   );
