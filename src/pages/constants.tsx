@@ -18,7 +18,7 @@ export function NamedStatementText() {
 }
 
 // Timer deadline
-export const deadline = '20 Oct 2024 13:40:00 GMT';
+export const deadline = '20 Aug 2024 12:00:00 GMT';
 
 export function LocationText() {
   return (
