@@ -54,7 +54,7 @@ export function Location() {
                     />
                     <img
                         className={classes.img}
-                        src={`${import.meta.env.BASE_URL}imgs/location/Loft_2.jpg`}
+                        src={`${import.meta.env.BASE_URL}imgs/location/Loft_2.JPG`}
                     />
                 </div>
             </div>
