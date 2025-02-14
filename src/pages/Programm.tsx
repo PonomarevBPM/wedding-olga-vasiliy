@@ -34,6 +34,14 @@ const useStyles = createUseStyles((theme: Theme) => ({
         width: 150,
         transform: 'rotate(-30deg)'
     },
+    leave2: {
+        position: 'absolute',
+        zIndex: '-1',
+        right: '8%',
+        top: '50%',
+        width: 90,
+        transform: 'rotate(30deg)'
+    },
     programmBlock: {
         display: 'flex',
         flexDirection: 'column',
@@ -97,6 +105,10 @@ export function Programm() {
                 <img
                     className={classes.leave}
                     src={`${import.meta.env.BASE_URL}imgs/program/leave.png`}
+                />
+                <img
+                    className={classes.leave2}
+                    src={`${import.meta.env.BASE_URL}imgs/program/leave2.JPG`}
                 />
                 <span className={classes.programmDate}>{header.date}</span>
                 <img
