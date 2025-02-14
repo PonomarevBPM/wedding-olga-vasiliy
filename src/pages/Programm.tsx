@@ -5,7 +5,6 @@ import { header } from './constants';
 
 const useStyles = createUseStyles((theme: Theme) => ({
     programmContainer: {
-        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -29,7 +28,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     leave: {
         position: 'absolute',
         zIndex: '-1',
-        left: '5%',
+        right: '100%',
         top: '5%',
         width: 150,
         transform: 'rotate(-30deg)'
@@ -37,7 +36,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     leave2: {
         position: 'absolute',
         zIndex: '-1',
-        right: '8%',
+        left: '120%',
         top: '50%',
         width: 90,
         transform: 'rotate(30deg)'
@@ -46,7 +45,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 15
+        gap: 15,
+        position: 'relative'
     },
     delimiter: {
         width: 250
@@ -85,6 +85,10 @@ export function Programm() {
                 <div className={classes.programmBlock}>
                     <span className={classes.programmTime}>15:00</span>
                     <span className={classes.programmText}>Сбор гостей</span>
+                    <img
+                        className={classes.leave}
+                        src={`${import.meta.env.BASE_URL}imgs/program/leave.png`}
+                    />
                 </div>
                 <div className={classes.programmBlock}>
                     <span className={classes.programmTime}>16:00</span>
@@ -93,6 +97,10 @@ export function Programm() {
                 <div className={classes.programmBlock}>
                     <span className={classes.programmTime}>17:00</span>
                     <span className={classes.programmText}>Начало ужина</span>
+                    <img
+                        className={classes.leave2}
+                        src={`${import.meta.env.BASE_URL}imgs/program/leave2.JPG`}
+                    />
                 </div>
                 <div className={classes.programmBlock}>
                     <span className={classes.programmTime}>19:00</span>
@@ -102,14 +110,7 @@ export function Programm() {
                     <span className={classes.programmTime}>23:00</span>
                     <span className={classes.programmText}>Финал вечера </span>
                 </div>
-                <img
-                    className={classes.leave}
-                    src={`${import.meta.env.BASE_URL}imgs/program/leave.png`}
-                />
-                <img
-                    className={classes.leave2}
-                    src={`${import.meta.env.BASE_URL}imgs/program/leave2.JPG`}
-                />
+
                 <span className={classes.programmDate}>{header.date}</span>
                 <img
                     className={classes.delimiter}
