@@ -1,23 +1,47 @@
 body {
     margin: 0;
+    /* scroll-snap-type: y mandatory; */
 }
 
 @font-face {
-    font-family: 'BrownSugar';
-    src: url(./assets/font/Brown_Sugar.ttf);
+    font-family: 'AllegrettoScriptTwo';
+    src: url(./assets/font/allegrettoscripttwo.ttf);
 }
 
 @font-face {
-    font-family: 'TTRamillas';
-    src: url(./assets/font/TTRamillasTrialRegular.ttf);
+    font-family: 'CastoroTitling';
+    src: url(./assets/font/CastoroTitling.ttf);
 }
 
 @font-face {
-    font-family: 'TTRamillasBold';
-    src: url(./assets/font/TTRamillasTrialBold.ttf);
+    font-family: 'KudryashevDisplay';
+    src: url(./assets/font/KudryashevDisplay.ttf);
 }
 
 @font-face {
-    font-family: 'TTCommons';
-    src: url(./assets/font/TTCommons-Regular.ttf);
+    font-family: 'KudryashevHeadline';
+    src: url(./assets/font/KudryashevHeadline.ttf);
+}
+
+@font-face {
+    font-family: 'Baskerville_Regular';
+    src: url(./assets/font/Baskerville_Regular.ttf);
+}
+
+@keyframes horizontal-shaking {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }

@@ -6,14 +6,16 @@ interface Props {
 }
 
 const useStyles = createUseStyles(() => ({
-  workArea: {
-    padding: [0, 100],
-    overflowX: 'hidden',
-  },
+    workArea: {
+        overflowY: 'scroll',
+        height: '100vh',
+        scrollSnapType: 'y mandatory',
+        userSelect: 'none'
+    }
 }));
 
 export function WorkArea({ children }: Props) {
-  const classes = useStyles();
+    const classes = useStyles();
 
-  return <main className={classes.workArea}>{children}</main>;
+    return <main className={classes.workArea}>{children}</main>;
 }

@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import svgLoader from 'vite-svg-loader';
 import { fileURLToPath } from 'url';
 
 export default ({ mode }: any) =>
@@ -8,7 +9,7 @@ export default ({ mode }: any) =>
             cors: false,
             port: 5174
         },
-        plugins: [react()],
+        plugins: [react(), svgLoader()],
         resolve: {
             alias: {
                 'I#':
@@ -17,5 +18,5 @@ export default ({ mode }: any) =>
                         : 'http://localhos:5174/'
             }
         },
-        base: mode === 'production' ? '/SA/dist/' : '/'
+        base: mode === 'production' ? '/VO/dist/' : '/'
     });
