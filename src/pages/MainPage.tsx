@@ -56,7 +56,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     [`@media only screen and (max-height: 575.98px) and (orientation: landscape)`]:
         {
             weddingBlock: {
-                marginTop: '10vh'
+                marginTop: '5vh'
             },
             container: {
                 gap: '5vh'
