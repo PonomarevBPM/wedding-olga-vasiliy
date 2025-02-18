@@ -17,7 +17,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '35vh',
+        marginTop: '33vh',
         gap: 10
     },
     weddingTitle: {
@@ -87,6 +87,7 @@ export const MainPage = () => {
                 15:00
             </span>
             <span className={classes.names}>ВАСИЛИЙ & ОЛЬГА</span>
+            <div></div>
         </div>
     );
 };

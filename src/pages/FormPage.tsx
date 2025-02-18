@@ -13,7 +13,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         fontFamily: theme.font.kudryashevHeadline,
         fontWeight: 400,
         fontSize: 15,
@@ -57,7 +57,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         width: 60,
         height: 60
     },
-    dresscode: { marginTop: '10vh' },
+    // dresscode: { marginTop: '10vh' },
     [`@media only screen and (max-height: 575.98px) and (orientation: landscape)`]:
         {
             button: {
@@ -106,7 +106,7 @@ export const FormPage = () => {
                 visit={willCome}
             />
             <div className={classes.container}>
-                <span className={classes.dresscode}>
+                <span>
                     ДРЕСС КОД
                     <br />
                     TOTAL BLACK
@@ -134,6 +134,7 @@ export const FormPage = () => {
                         </button>
                     </div>
                 </div>
+                <span>18+</span>
                 <div className={classes.logocontainer}>
                     <span>ЧАТ ГОСТЕЙ</span>
                     <img
@@ -158,7 +159,7 @@ export const FormPage = () => {
                     <br />
                     ДАРИНА 8 (966) 045-44-49
                 </span>
-                <span style={{ marginBottom: '10vh' }}>18+</span>
+                {/* <span>18+</span> */}
             </div>
         </>
     );
