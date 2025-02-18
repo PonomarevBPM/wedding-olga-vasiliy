@@ -32,12 +32,13 @@ const customStyles: Modal.Styles = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-around',
-        boxShadow: '0px 4px 4px 0px rgba(129, 3, 3, 0.25)'
+        boxShadow: '0px 4px 4px 0px rgba(129, 3, 3, 0.25)',
+        filter: 'none'
     },
     overlay: {
         position: 'fixed',
         inset: 0,
-        background: 'none',
+        background: 'rgba(0, 0, 0, 0.3)',
         backdropFilter: 'blur(2px)'
     }
 };
