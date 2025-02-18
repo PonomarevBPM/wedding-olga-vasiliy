@@ -21,21 +21,21 @@ interface Props {
 // ]);
 
 const useStyles = createUseStyles((theme: Theme) => ({
-  statementNames: {
-    fontFamily: theme.font.rammillas,
-    fontSize: 28,
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    marginBottom: 30,
-  },
+    statementNames: {
+        fontFamily: theme.font.kudryashevHeadline,
+        fontSize: 28,
+        textTransform: 'uppercase',
+        textAlign: 'center',
+        marginBottom: 30
+    }
 }));
 
 export function GuestName({ guest }: Props) {
-  if (guest) {
-    const classes = useStyles();
-    return (
-      <div className={classes.statementNames}>
-        {/* {guest === 'Darina'
+    if (guest) {
+        const classes = useStyles();
+        return (
+            <div className={classes.statementNames}>
+                {/* {guest === 'Darina'
                 || guest === 'Vika'
                 || guest === 'Babushka'
                 || guest === 'Kamilla' ? (
@@ -48,8 +48,8 @@ export function GuestName({ guest }: Props) {
           )}
 
         <span>{guests.get(guest)}</span> */}
-        <span>Дорогие и любимые</span>
-      </div>
-    );
-  }
+                <span>Дорогие и любимые</span>
+            </div>
+        );
+    }
 }
