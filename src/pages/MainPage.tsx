@@ -4,7 +4,7 @@ import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
     container: {
-        height: '100vh',
+        height: '100svh',
         position: 'relative',
         scrollSnapAlign: 'center',
         backgroundImage: `url(${import.meta.env.BASE_URL}imgs/bc.jpg)`,
@@ -17,7 +17,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '40vh',
+        marginTop: '35vh',
         gap: 10
     },
     weddingTitle: {
