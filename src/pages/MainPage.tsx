@@ -4,7 +4,7 @@ import { Theme } from '../styles/theme';
 
 const useStyles = createUseStyles((theme: Theme) => ({
     container: {
-        height: '100lvh',
+        height: '100svh',
         position: 'relative',
         scrollSnapAlign: 'center',
         backgroundImage: `url(${import.meta.env.BASE_URL}imgs/bc.jpg)`,
