@@ -7,7 +7,7 @@ import { FormModal } from '../components/FormModal';
 const useStyles = createUseStyles((theme: Theme) => ({
     container: {
         boxSizing: 'border-box',
-        height: '100lvh',
+        height: '100svh',
         scrollSnapAlign: 'center',
         backgroundImage: `url(${import.meta.env.BASE_URL}imgs/bc.jpg)`,
         display: 'flex',
