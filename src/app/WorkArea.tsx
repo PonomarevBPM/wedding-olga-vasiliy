@@ -9,7 +9,7 @@ const useStyles = createUseStyles(() => ({
     workArea: {
         overflowY: 'scroll',
         height: '100dvh',
-        width: '100dvw',
+        width: '100vw',
         scrollSnapType: 'y mandatory',
         userSelect: 'none'
     }
