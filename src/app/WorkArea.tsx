@@ -8,6 +8,7 @@ interface Props {
 const useStyles = createUseStyles(() => ({
     workArea: {
         overflowY: 'scroll',
+        overflowX: 'hidden',
         height: '100dvh',
         width: '100vw',
         scrollSnapType: 'y mandatory',
