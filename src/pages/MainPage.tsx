@@ -57,6 +57,9 @@ const useStyles = createUseStyles((theme: Theme) => ({
         {
             weddingBlock: {
                 marginTop: '10vh'
+            },
+            container: {
+                gap: '5vh'
             }
         }
 }));
