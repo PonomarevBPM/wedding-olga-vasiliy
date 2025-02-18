@@ -3,6 +3,7 @@ export interface Theme {
         white: string;
         black: string;
         red: string;
+        darkRed: string;
         headerBG: string;
         headerMain: string;
     };
@@ -20,6 +21,7 @@ export const theme: Theme = {
         black: 'rgb(0,0,0)',
         white: 'rgb(255,255,255)',
         red: 'rgb(129, 3, 3)',
+        darkRed: 'rgba(106, 5, 5, 1)',
         headerBG: 'white',
         headerMain: 'black'
     },

@@ -13,10 +13,10 @@ const customStyles: Modal.Styles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        padding: '35px 25px 40px',
+        padding: '45px 25px 40px',
         border: 'none',
         borderRadius: 15,
-        backgroundColor: theme.color.red,
+        backgroundColor: theme.color.darkRed,
         color: 'white',
         height: '35vh',
         minHeight: 270,
@@ -26,12 +26,12 @@ const customStyles: Modal.Styles = {
         position: 'relative',
         overflow: 'visible',
         fontFamily: theme.font.kudryashevHeadline,
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         boxShadow: '0px 4px 4px 0px rgba(129, 3, 3, 0.25)'
     },
     overlay: {
@@ -63,7 +63,7 @@ const useStyles = createUseStyles(() => ({
         justifyContent: 'center'
     },
     helperText: {
-        fontSize: 16,
+        fontSize: 15,
         animation: 'horizontal-shaking 0.35s 1',
         position: 'absolute',
         width: '150%',
@@ -76,7 +76,8 @@ const useStyles = createUseStyles(() => ({
         backgroundColor: 'rgba(243, 243, 243, 0)',
         border: '1px solid rgba(255, 255, 255, 0.58)',
         borderRadius: 25,
-        padding: 15,
+        padding: '8px 10px 12px',
+        fontFamily: theme.font.kudryashevHeadline,
         fontSize: 20,
         width: '100%',
         maxWidth: 320,
@@ -84,7 +85,8 @@ const useStyles = createUseStyles(() => ({
             outline: 0
         },
         '&::placeholder': {
-            color: 'rgba(255, 255, 255, 0.58) !important'
+            color: 'rgba(255, 255, 255, 0.58) !important',
+            fontFamily: theme.font.kudryashevHeadline
         }
     },
     button: {
@@ -95,7 +97,7 @@ const useStyles = createUseStyles(() => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '16px 22px',
+        padding: '11px 39px',
         marginBottom: 25
     },
     wrapper: {
@@ -184,12 +186,14 @@ export const FormModal = ({ isOpen, onClose, visit }: Props) => {
                 />
             ) : (
                 <>
-                    <span>НАПИШИТЕ, ПОЖАЛУЙСТА, ВАШИ ДАННЫЕ В ПОЛЕ НИЖЕ</span>
+                    <span style={{ maxWidth: 320 }}>
+                        НАПИШИТЕ, ПОЖАЛУЙСТА, ВАШИ ДАННЫЕ В ПОЛЕ НИЖЕ
+                    </span>
                     <input
                         className={classes.input}
                         value={names}
                         onChange={(e) => setNames(e.target.value)}
-                        placeholder="Имя и фамилия"
+                        placeholder="Имя и фамилия..."
                     />
                     {isSuccess ? (
                         <span>ВЫ УСПЕШНО ОТПРАВИЛИ ДАННЫЕ!</span>

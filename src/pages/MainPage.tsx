@@ -44,7 +44,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
     detail: {
         position: 'absolute',
         top: 0,
-        left: '0%'
+        left: '0%',
+        width: 320
     },
     [`@media (min-width: 1200px)`]: {
         detail: {

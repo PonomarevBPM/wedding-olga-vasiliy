@@ -45,8 +45,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         justifyContent: 'center'
     },
     contacts: {
-        fontSize: 11,
-        marginBottom: '10vh'
+        fontSize: 11
     },
     logocontainer: {
         display: 'flex',
@@ -143,7 +142,7 @@ export const FormPage = () => {
                         onClick={() => {
                             window
                                 .open(
-                                    'https://t.me/+UaGGkVSryTozODA6',
+                                    'https://t.me/+RtxrQBY8VQZjZjUy',
                                     '_blank'
                                 )
                                 ?.focus();
@@ -159,6 +158,7 @@ export const FormPage = () => {
                     <br />
                     ДАРИНА 8 (966) 045-44-49
                 </span>
+                <span style={{ marginBottom: '10vh' }}>18+</span>
             </div>
         </>
     );
