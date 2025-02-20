@@ -100,7 +100,7 @@ export const ContactModal = ({ isOpen, onClose, phoneNumber }: Props) => {
                 <button
                     className={classes.button}
                     onClick={() => {
-                        window.open(`tel:${phoneNumber}`, '_blank')?.focus();
+                        window.open(`tel:${phoneNumber}`)?.focus();
                     }}
                 >
                     <img className={classes.miniIcon} src={phoneMini} />
