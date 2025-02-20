@@ -8,6 +8,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         position: 'relative',
         scrollSnapAlign: 'center',
         backgroundImage: `url(${import.meta.env.BASE_URL}imgs/bc.jpg)`,
+        backgroundSize: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -45,7 +46,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         position: 'absolute',
         top: 0,
         left: '0%',
-        width: 320
+        width: 300
     },
     [`@media (min-width: 1200px)`]: {
         detail: {

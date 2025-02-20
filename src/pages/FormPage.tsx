@@ -10,6 +10,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
         height: '100dvh',
         scrollSnapAlign: 'center',
         backgroundImage: `url(${import.meta.env.BASE_URL}imgs/bc.jpg)`,
+        backgroundSize: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
