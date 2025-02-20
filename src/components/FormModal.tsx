@@ -77,11 +77,13 @@ const useStyles = createUseStyles(() => ({
         backgroundColor: 'rgba(243, 243, 243, 0)',
         border: '1px solid rgba(255, 255, 255, 0.58)',
         borderRadius: 25,
-        padding: '8px 10px 12px',
+        padding: '0px 18px 0px',
         fontFamily: theme.font.kudryashevHeadline,
-        fontSize: 20,
+        fontSize: 15,
         width: '100%',
         maxWidth: 320,
+        lineHeight: '45px',
+        textTransform: 'uppercase',
         '&:focus': {
             outline: 0
         },
@@ -194,7 +196,7 @@ export const FormModal = ({ isOpen, onClose, visit }: Props) => {
                         className={classes.input}
                         value={names}
                         onChange={(e) => setNames(e.target.value)}
-                        placeholder="Имя и фамилия..."
+                        placeholder="ИМЯ И ФАМИЛИЯ..."
                     />
                     {isSuccess ? (
                         <span>ВЫ УСПЕШНО ОТПРАВИЛИ ДАННЫЕ!</span>

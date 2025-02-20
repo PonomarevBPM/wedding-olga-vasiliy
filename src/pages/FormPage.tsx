@@ -3,6 +3,7 @@ import { Theme } from '../styles/theme';
 import telegramLogo from '/imgs/telegramLogo.svg?url';
 import { useState } from 'react';
 import { FormModal } from '../components/FormModal';
+import { ContactModal } from '../components/ContactModal';
 
 const useStyles = createUseStyles((theme: Theme) => ({
     container: {
@@ -39,24 +40,28 @@ const useStyles = createUseStyles((theme: Theme) => ({
         color: theme.color.white,
         backgroundColor: theme.color.red,
         minWidth: 115,
-        minHeight: 53,
+        minHeight: 45,
         borderRadius: 25,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
     },
     contacts: {
-        fontSize: 11
+        fontSize: 12
     },
     logocontainer: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 24
+        gap: 12
     },
     logo: {
-        width: 60,
+        width: 48,
         height: 60
+    },
+    hrefs: {
+        all: 'unset',
+        textDecoration: 'underline'
     },
     // dresscode: { marginTop: '10vh' },
     [`@media only screen and (max-height: 575.98px) and (orientation: landscape)`]:
@@ -81,6 +86,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
 
 export const FormPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isContactsOpen, setIsContactsOpen] = useState(false);
+    const [phoneNumber, setPhoneNumber] = useState('+79096607972');
     const [willCome, setWillCome] = useState<'Да' | 'Нет' | null>(null);
 
     const classes = useStyles();
@@ -106,12 +113,13 @@ export const FormPage = () => {
                 onClose={handleModalClose}
                 visit={willCome}
             />
+            <ContactModal
+                isOpen={isContactsOpen}
+                onClose={() => setIsContactsOpen(false)}
+                phoneNumber={phoneNumber}
+            />
             <div className={classes.container}>
-                <span>
-                    ДРЕСС КОД
-                    <br />
-                    TOTAL BLACK
-                </span>
+                <span></span>
                 <div className={classes.formContainer}>
                     <span>
                         ПОДТВЕРДИТЕ, ПОЖАЛУЙСТА,
@@ -127,15 +135,21 @@ export const FormPage = () => {
                         >
                             ПРИДУ
                         </button>
-                        <button
+                        {/* <button
                             className={classes.button}
                             onClick={handleNoClick}
                         >
                             НЕ ПРИДУ
-                        </button>
+                        </button> */}
                     </div>
                 </div>
-                <span>18+</span>
+                <span>
+                    ДРЕСС КОД
+                    <br />
+                    TOTAL BLACK
+                    <br />
+                    18+
+                </span>
                 <div className={classes.logocontainer}>
                     <span>ЧАТ ГОСТЕЙ</span>
                     <img
@@ -156,9 +170,25 @@ export const FormPage = () => {
                     <br />
                     ОБРАЩАТЬСЯ К НАШИМ ОРГАНИЗАТОРАМ
                     <br />
-                    ВАЛЕРИЯ 8 (909) 660-79-72
+                    <span
+                        className={classes.hrefs}
+                        onClick={() => {
+                            setPhoneNumber('+79096607972');
+                            setIsContactsOpen(true);
+                        }}
+                    >
+                        ВАЛЕРИЯ 8 (909) 660-79-72
+                    </span>
                     <br />
-                    ДАРИНА 8 (966) 045-44-49
+                    <span
+                        className={classes.hrefs}
+                        onClick={() => {
+                            setPhoneNumber('+79660454449');
+                            setIsContactsOpen(true);
+                        }}
+                    >
+                        ДАРИНА 8 (966) 045-44-49
+                    </span>
                 </span>
                 {/* <span>18+</span> */}
             </div>
