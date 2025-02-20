@@ -147,9 +147,8 @@ export const FormPage = () => {
                     ДРЕСС КОД
                     <br />
                     TOTAL BLACK
-                    <br />
-                    18+
                 </span>
+                <span>18+</span>
                 <div className={classes.logocontainer}>
                     <span>ЧАТ ГОСТЕЙ</span>
                     <img
