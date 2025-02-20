@@ -97,15 +97,10 @@ export const ContactModal = ({ isOpen, onClose, phoneNumber }: Props) => {
     return (
         <Modal isOpen={isOpen} style={customStyles} ariaHideApp={false}>
             <div className={classes.wrapper}>
-                <button
-                    className={classes.button}
-                    onClick={() => {
-                        window.open(`tel:${phoneNumber}`)?.focus();
-                    }}
-                >
+                <a className={classes.button} href={`tel:${phoneNumber}`}>
                     <img className={classes.miniIcon} src={phoneMini} />
                     Позвонить
-                </button>
+                </a>
                 <button
                     className={classes.button}
                     onClick={() => {
