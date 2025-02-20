@@ -97,10 +97,10 @@ export const FormPage = () => {
         setWillCome('Да');
     };
 
-    const handleNoClick = () => {
-        setIsModalOpen(true);
-        setWillCome('Нет');
-    };
+    // const handleNoClick = () => {
+    //     setIsModalOpen(true);
+    //     setWillCome('Нет');
+    // };
 
     const handleModalClose = () => {
         setIsModalOpen(false);
