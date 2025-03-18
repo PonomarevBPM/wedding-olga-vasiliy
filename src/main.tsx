@@ -7,13 +7,13 @@ import { theme } from './styles/theme.ts';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/VO/:guestsName" element={<App />} />
-                </Routes>
-            </BrowserRouter>
-        </ThemeProvider>
-    </React.StrictMode>
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/VO/:guestsName" element={<App />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
+  </React.StrictMode>,
 );

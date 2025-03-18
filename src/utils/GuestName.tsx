@@ -31,8 +31,8 @@ const useStyles = createUseStyles((theme: Theme) => ({
 }));
 
 export function GuestName({ guest }: Props) {
+    const classes = useStyles();
     if (guest) {
-        const classes = useStyles();
         return (
             <div className={classes.statementNames}>
                 {/* {guest === 'Darina'

@@ -17,19 +17,19 @@ export interface Theme {
 }
 
 export const theme: Theme = {
-    color: {
-        black: 'rgb(0,0,0)',
-        white: 'rgb(255,255,255)',
-        red: 'rgb(129, 3, 3)',
-        darkRed: 'rgba(106, 5, 5, 1)',
-        headerBG: 'white',
-        headerMain: 'black'
-    },
-    font: {
-        allegrettoScriptTwo: 'AllegrettoScriptTwo',
-        castoroTitling: 'CastoroTitling',
-        kudryashevDisplay: 'KudryashevDisplay',
-        kudryashevHeadline: 'KudryashevHeadline',
-        baskervilleRegular: 'Baskerville_Regular'
-    }
+  color: {
+    black: 'rgb(0,0,0)',
+    white: 'rgb(255,255,255)',
+    red: 'rgb(129, 3, 3)',
+    darkRed: 'rgba(106, 5, 5, 1)',
+    headerBG: 'white',
+    headerMain: 'black',
+  },
+  font: {
+    allegrettoScriptTwo: 'AllegrettoScriptTwo',
+    castoroTitling: 'CastoroTitling',
+    kudryashevDisplay: 'KudryashevDisplay',
+    kudryashevHeadline: 'KudryashevHeadline',
+    baskervilleRegular: 'Baskerville_Regular',
+  },
 };

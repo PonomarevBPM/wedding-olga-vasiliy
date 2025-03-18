@@ -70,6 +70,7 @@ export function CheckBoxGroup({ options, name }: Props) {
             }
         });
         setValue(name, value);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checkedState]);
 
     return (
